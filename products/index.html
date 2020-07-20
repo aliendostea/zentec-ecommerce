@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="/sass/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>Zentec</title>
+</head>
+
+<body>   
+    <main class="main-container main-container--3">
+        <header id="home-header" class="header header--2">
+            <nav id="header-nav" class="header-nav">
+                <div class="header-nav__box">
+                    <a class="header-nav__box__item" href="/index.html"
+                        onclick="initScroll('home-header'); return false;">Home</a>
+                    <a class="header-nav__box__item" href="/index.html#about-us"
+                        onclick="initScroll('about-us'); return false;">¿Quiénes somos?</a>
+                </div>
+                <a class="header-nav__logo-box" href="/index.html" onclick="initScroll('home-header'); return false;">
+                    <img class="header-nav__logo" src="/img/zentec-logo.svg" alt="Logo Zentec">
+                </a>
+                <div class="header-nav__box">
+                    <a class="header-nav__box__item" href="/index.html#home-products"
+                        onclick="initScroll('home-products'); return false;">Productos</a>
+                    <a class="header-nav__box__item" href="/contact.html">Contacto</a>
+                </div>
+                <button id="btn-nav-hamb" class="nav-hamb">
+                    <span class="nav-hamb__lines"></span>
+                </button>
+            </nav>   
+        </header>
+    
+        <section id="productList" class="product-list">
+            <div class="box-center-cross-axis">
+                <h1 class="heading heading--small heading--color-sec margin-right-3rem">Lista de productos</h1>
+                <nav class="nav-top">
+                    <span class="nav-top__line"></span>
+                    <ul class="nav-top__box">
+                        <li><a class="nav-top__link" href="/index.html">Home</a></li>
+                        <span class="nav-top__span">&gt;</span>
+                        <li><a class="nav-top__link nav-top__link--current" href="/products/index.html">Lista de productos</a></li>
+                    </ul>
+                </nav>
+                <a href="/index.html">
+                    <button class="btn btn--color-secundary-2">Regresar a home</button>
+                </a>
+            </div>
+            
+    
+            <div id="productListWrapper" class="product-list__wrapper">
+                <!-- <a href="electric/product-detail.html" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto2-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>                
+                <a href="#" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto2-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>
+                <a href="#" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto3-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>             -->
+    
+            </div>
+
+            <div id="nav-aside-overlay" class="nav-aside__overlay">
+                <nav class="nav-aside"></nav>
+            </div>
+            
+    
+            <!-- <div class="test__responsive">
+                test__responsive
+            </div>     -->
+        
+        </section>
+        <footer class="footer">
+            <!-- <span class="footer__line line"></span> -->
+        
+            <div class="footer__redes">
+                <a href="https://www.instagram.com/somoszentec/" class="btn btn__link">
+                    <img src="/img/icon-instagram.svg" alt="instagram Zentec">
+                </a>
+                <a href="https://www.instagram.com/somoszentec/" class="btn btn__link">
+                    <img src="/img/icon-facebook.svg" alt="facebook Zentec">
+                </a>
+            </div>
+        
+            <a class="footer__box-logo" href="/index.html">
+                <img class="logo" src="/img/zentec-logo-brown.svg" alt="Logo Zentec">
+            </a>
+            <span class="footer__line line"></span>
+        
+        
+            <div>Copyright ©2020 Zentec, Todos los derechos reservados.</div>
+        </footer>
+    
+    
+    </main>
+    <script src="/js/popups.js"></script>
+    <script src="/js/product.js"></script>
+
+</body>
+</html>

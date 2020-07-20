@@ -1,0 +1,303 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px   
+
+    @include respond(tab-between-port-land){
+        font-size: 52%;       
+    } 
+    @include respond(tab-port){
+        font-size: 48%; 
+    }   
+    @include respond(big-desktop) {
+        font-size: 68%; //1rem = 12, 12/16
+    }
+   
+}
+body {
+    background-color: rgb(248, 248, 248);
+    font-family: $font-primary;
+    color: $color-grey-dark-1;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: .33px;
+}
+///////// ------ links ------ /////////
+a {
+    &,
+    &:link,
+    &:visited{
+        font-family: $font-primary;
+        text-decoration: none; /* no underline */
+        color: inherit; /* blue colors for links too */
+        outline: none;
+        background-color: transparent;    
+
+       a:active {
+            color: inherit; 
+            text-decoration: none; 
+            outline: none;
+            background-color: transparent;  
+       }
+
+    }
+}
+
+///////// ------ end links ------ /////////
+///////// ------ general ------ /////////
+nav ul {
+    list-style:none;
+}
+
+button {
+     font-family: $font-primary;
+     width: auto;
+     background: transparent;
+     border: none;
+     cursor: pointer;
+     outline: none;
+}
+
+b {/// all <b> tag
+    font-weight: 700;
+}
+
+span{
+    color: inherit; /// revisar si esto funciona
+}
+
+img{ //// esto es una prueba, verificar
+    display: block;
+    width: 100%;
+}
+
+::selection{
+    color: $color-secondary;
+    background-color: $color-primary; 
+}
+///////// ------ end general ------ /////////
+
+///////// ------ start - Scrollbar Styling ------ /////////
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: $color-grey-light-2; /// modificar
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 1rem;
+    border-radius: 1rem;
+    background: rgb(187, 187, 187); 
+}
+///////// ------ end - Scrollbar Styling ------ /////////
+
+///// start - testing 
+.testing-element{
+    grid-column: $grid-column-full-start-end;
+    display: grid;
+    grid-row-gap: 2rem;
+    background-color: rgb(228, 228, 228);
+    padding: 6rem 0 6rem 6rem;
+}
+.testing-colors{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 17rem));
+    grid-template-rows: min-content;
+    grid-column-gap: 3rem;
+    grid-row-gap: 3rem;
+
+    &__element{
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+    }
+    &__1{
+        background-color: $color-primary;
+    }
+    &__2{
+        background-color: $color-secondary;
+    }
+    &__3{
+        background-color: $color-brown-dark-1;
+    }
+    &__4{
+        background-color: $color-brown-dark-2;
+    } 
+    &__5{
+        background-color: $color-brown-dark-3;
+    }
+    &__6{
+        background-color: $color-brown-dark-4;
+    }  
+    &__7{
+        background-color: $color-grey-light-1;
+    }
+    &__8{
+        background-color: $color-grey-light-2;
+    } 
+    &__9{
+        background-color: $color-green;
+    }
+    &__10{
+        background-color: $color-red;
+    }
+}
+.item{
+    background-color: rgb(189, 189, 189);
+}
+///// end - testing 
+
+////esto es para la pagina de construction
+.container-contruction {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  align-content: space-between;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: minmax(68rem, 1fr) min-content;
+  padding: 4rem 0 1rem 0;
+  //   overflow-x: hidden;
+  background-color: $color-primary;
+
+    @include respond(tab-port){
+       grid-template-rows: minmax(64rem, 1fr);
+       padding: 2rem;
+    }      
+    @include respond(phone){
+        grid-template-rows: minmax(64rem, 92vh);
+        padding: 2rem 0;
+    }    
+}
+
+.header-contruction {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: 63vw;
+    display: grid;
+    grid-template-rows: min-content minmax(6rem, min-content) min-content;
+    grid-template-columns: minmax(min-content, max-content);
+    grid-row-gap: 1.5rem;
+    justify-content: center;
+    align-content: space-between;
+    background-color: $color-grey-light-1; 
+    // padding: 3rem 17rem;
+    box-shadow: 0 17px 42px rgba(0, 0, 0, .23);
+    border-radius: 20px;
+    padding: 2rem 8rem;
+    z-index: 5;    
+
+    @include respond(tab-between-land-desktop){
+        width: 72vw;
+    }    
+    @include respond(tab-port){
+        padding: 2rem 2rem;
+    } 
+    @include respond(phone){
+        padding: 4rem 2rem; 
+        width: 85vw;
+    } 
+    @include respond(mini-phone){
+        width: 90vw;
+    }    
+
+    &__logo {
+        height: 16rem;
+        justify-self: center;
+        transition: all .4s;
+        cursor: pointer;
+        &:hover{
+            transform: translateY(-3px);
+        }
+        @include respond(phone){
+            height: 11rem;
+        }
+    }
+
+    &__box{
+        display: grid;
+        justify-items: center;
+        align-content: center;
+
+        & div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: $color-secondary;
+            @include respond(tab-port){
+                 text-align: center;
+            }
+        }
+
+        & img{
+            width: 50%;
+            // width: 95%;
+            align-self: center;
+
+            @include respond(tab-between-port-land){
+                width: 64%;
+            } 
+            @include respond(phone){
+                width: 100%;
+            }
+        }
+    }
+    &__box-items{
+        display: grid;
+        grid-template-rows: minmax(min-content, max-content);
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 5rem;
+        @include respond(tab-port){
+            grid-template-columns: 1fr;
+            grid-row-gap: 4rem;
+        }          
+    }
+    &__p{
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1;
+        margin: 0;
+        padding: 0;
+        color: $color-secondary;
+
+        @include respond(mini-phone){
+            font-size: 1.5rem;
+        } 
+    }
+}
+
+.logo__wings{
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: .5rem;
+    z-index: 1;
+    overflow: hidden;
+    opacity: .4;
+    & img{
+        width: 100vw;
+    }
+    @include respond(tab-port){
+        display: none;
+    }
+}
+
+
+
+

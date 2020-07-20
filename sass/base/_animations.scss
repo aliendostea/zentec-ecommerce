@@ -1,0 +1,139 @@
+////// start - anime.js
+/*
+.ml7 {
+  position: relative;
+  font-weight: 900;
+  font-size: 3.7em;
+}
+.ml7 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+.ml7 .letter {
+  transform-origin: 0 100%;
+  display: inline-block;
+  line-height: 1em;
+}
+////// end - anime.js 
+*/
+
+.fade-in {
+	-webkit-animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 300ms both;
+          animation: fade-in 2.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) 300ms both;
+}
+.fade-in--2 {
+	-webkit-animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation fade-in
+ * ----------------------------------------
+ */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.link-span-nav-aside {
+	-webkit-animation: link-span-nav-aside .9s cubic-bezier(.65,.26,.34,.96) 600ms both;
+          animation: link-span-nav-aside .9s cubic-bezier(.65,.26,.34,.96) 600ms both;
+}
+
+@-webkit-keyframes link-span-nav-aside {
+  0% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes link-span-nav-aside {
+ 0% {
+    transform: translateY(5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes progressbarHeader {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+@keyframes progressbarHeader {
+    0% {width: 0%;}
+    100% {width: 100%;}
+}
+
+/**
+ * ----------------------------------------
+ * animation slide-top
+ * ----------------------------------------
+ */
+ .slide-top {
+	-webkit-animation: slide-top-letters-header 1.2s cubic-bezier(.65,.26,.34,.96) 600ms both;
+          animation: slide-top-letters-header 1.2s cubic-bezier(.65,.26,.34,.96) 600ms both;
+
+     @include respond(tab-port){
+        	-webkit-animation: slide-top-letters-header-tab-port 1.2s cubic-bezier(.65,.26,.34,.96) 600ms both;
+          animation: slide-top-letters-header-tab-port 1.2s cubic-bezier(.65,.26,.34,.96) 600ms both; 
+     }
+}
+@-webkit-keyframes slide-top-letters-header {
+  0% {
+    -webkit-transform: translateY(20rem);
+            transform: translateY(20rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slide-top-letters-header {
+  0% {
+    -webkit-transform: translateY(20rem);
+            transform: translateY(20rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@-webkit-keyframes slide-top-letters-header-tab-port {
+  0% {
+    -webkit-transform: translateY(38rem);
+            transform: translateY(38rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes slide-top-letters-header-tab-port {
+  0% {
+    -webkit-transform: translateY(38rem);
+            transform: translateY(38rem);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}

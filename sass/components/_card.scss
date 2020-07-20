@@ -1,0 +1,31 @@
+.parent-card-home{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 32rem));
+  grid-gap: 3rem 14rem;
+  justify-content: center;
+   @include respond(tab-port){
+         grid-template-columns: minmax(25rem, 36rem);
+         grid-gap: 6rem 14rem;
+   }  
+   @include respond(mini-phone){
+         grid-template-columns: minmax(18rem, 28rem);         
+   }
+}
+.card-home{
+  background-color: white;
+  display: grid;
+  grid-template-columns: minmax( min-content, 1fr);
+  grid-template-rows: min-content;
+  grid-row-gap: 1.5rem;  
+  justify-items: center; 
+  text-align: center;
+  line-height: 1;
+  border-radius: $border-radius-box;
+  box-shadow: $box-shadows-light;
+  padding: 4rem 3rem;
+  transition: all .3s;
+
+  & .btn{
+    align-self: center
+  }
+}

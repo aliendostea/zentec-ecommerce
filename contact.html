@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="sass/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>Zentec</title>
+</head>
+
+<body>
+    <main class="main-container main-container--2">
+        <header class="header header--2">
+            <nav class="header-nav">
+                <div class="header-nav__box">
+                    <a class="header-nav__box__item" href="/index.html">Home</a>
+                    <a class="header-nav__box__item" href="/index.html#about-us">¿Quiénes somos?</a>
+                </div>
+                <a class="header-nav__logo-box" href="/index.html">
+                    <img class="header-nav__logo" src="/img/zentec-logo.svg" alt="Logo Zentec">
+                </a>
+                <div class="header-nav__box">
+                    <a class="header-nav__box__item" href="/index.html#home-products">Productos</a>
+                    <a class="header-nav__box__item" href="#">Contacto</a>
+                </div>
+                <button id="btn-nav-hamb" class="nav-hamb">
+                    <span class="nav-hamb__lines"></span>
+                </button>
+            </nav>
+        </header>
+    
+        <section class="contact-form">
+
+            <div class="form__box">
+                <label class="form__label" for="user-name">¿Cuál es tu nombre y apellido?</label>
+                <input id="user-name" type="text" class="form__textarea" name="user-name" placeholder="Escribe tu nombre y apellido">
+                <!-- <textarea id="user-name" class="form__textarea" type="text" name="user-name" wrap="on"
+                   placeholder="Escribe tu nombre"></textarea> -->
+                <span class="form__step">Paso <span id="span-form-step" class="form_step__number">1</span> de 4</span>
+                <!-- <span class="form__errors"><img src="img/icon-alert-error.svg" alt="">Por favor, rellena este campo antes de avanzar</span> -->
+            </div>
+
+            <a class="form__btn">
+                 <button id="contact-btn-previous" class="btn btn-boderline margin-right-3rem fade-in--2 display-none-important">Anterior</button>
+                 <button id="contact-next-btn" class="btn btn-big ">Siguiente</button>
+                <!-- <button id="contact-btn" class="btn btn-big btn--disable" disabled>Siguiente 1</button> -->
+            </a>
+
+            <span class="line"></span>
+            <p class="paragraph paragraph--2rem">También puedes llamarnos rápidamente al:</p>
+            
+            <span class="paragraph--4rem text-center">+58 (241) 814 29 13 / +58 (414) 018 08 38</span>
+                            
+
+        </section>
+        <div id="popup-overlay-contact" class="popup-overlay">
+            <div class="popup">
+                <h6 class="heading heading--small">Datos para enviar</h6>
+                <button id="popup-btn-x" class="btn btn-round"><span class="btn-round__lines-x"></span></button>
+
+                <div>
+                    <p class="heading heading--small-2 heading--color-gray">Nombre y apellido:</p>
+                    <p id="popup-user-name" class="paragraph">--</p>
+                </div> 
+                
+                <div>
+                    <p class="heading heading--small-2 heading--color-gray">Número de contacto:</p>
+                    <p id="popup-user-number" class="paragraph">--</p>
+                </div>
+
+                <div>
+                    <p class="heading heading--small-2 heading--color-gray">Email:</p>
+                    <p id="popup-user-email" class="paragraph">--</p>                
+                </div>
+
+                <div>
+                    <p class="heading heading--small-2 heading--color-gray">Mensaje:</p>
+                    <p id="popup-user-message" class="paragraph popup__message">--</p>                
+                </div>
+                
+                <button id="sendFormBtn" class="btn btn-big">Enviar</button>
+                
+            </div> 
+        </div>
+
+        <div id="nav-aside-overlay" class="nav-aside__overlay">
+            <nav class="nav-aside"></nav>
+        </div> 
+
+        <!-- <div class="test__responsive">
+                        test__responsive
+                    </div> -->
+
+    </main>
+    <script src="js/app.js"></script>
+    <script src="js/contact.js"></script>
+    <script src="js/popups.js"></script>
+    <script>
+
+document.querySelector('.popup-overlay').addEventListener('click', closePopupOverlayOnclick);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+.product-list{
+    @include parent-body-product-section;
+    padding: 5rem 10rem 12rem 10rem;
+
+    & > div a .btn{
+        display: none;
+        @include respond(tab-port){ display: block;} 
+    }
+
+    @include respond(phone){
+        padding: 5rem 5rem 4rem 5rem;
+    } 
+
+    &__wrapper{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+        justify-content: center;
+        grid-gap: 5rem;  
+        
+        @include respond(tab-between-land-desktop){
+        //    background-color: rgb(216, 99, 31); //borrar
+        }
+        @include respond(tab-land){
+            // background-color: rgb(33, 77, 172); //borrar
+        }
+        @include respond(tab-between-port-land){
+            grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+        } 
+        @include respond(tab-port){
+           grid-column-gap: 3rem;
+           grid-row-gap: 2.5rem;
+        } 
+        @include respond(phone){
+            grid-template-columns: repeat(auto-fit, minmax(22rem, 31rem));
+        } 
+        @include respond(mini-phone){
+            // background-color: rgb(50, 206, 206); //borrar
+        }    
+        @include respond(big-desktop){
+        //    background-color: rgb(95, 160, 52); //borrar
+           grid-template-columns: repeat(5, minmax(24rem, 1fr))
+        } 
+    }
+}
+.product-detail{
+    @include parent-body-product-section;
+    grid-template-rows: min-content 1fr;
+    grid-row-gap: 3rem;
+    @include respond(tab-port){
+        padding: 5rem 5rem 4rem 5rem;
+    }
+
+    &__box-photos{
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        display: grid;
+        grid-template-columns: 9rem 1fr;
+        grid-template-rows: 1fr;
+        border-radius: 3px;
+        overflow: hidden;
+
+        @include respond(tab-between-port-land){
+            grid-row: 1 / 3;
+        }
+        @include respond(tab-port){
+            grid-row: 1 / 2;
+        }
+    }
+    &__photo{
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    &__carousel{
+         grid-column: 1 / 2;
+         grid-row: 1 / 2;
+         align-self: end;
+         height: 26rem;
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         flex-direction: column;
+         padding-bottom: 1rem;         
+        //  background-color: rgb(24, 32, 26); // borrar
+         &__img{
+            width: 5rem;
+            height: 5rem;
+            border-radius: 3rem;
+            border: 2px solid $color-primary;
+            overflow: hidden;
+            background-color: azure;
+            cursor: pointer;
+
+            &--active{
+                 border: 4px solid $color-primary;
+            }
+
+            & img{
+                width: 100%;
+                display: block;
+                object-fit: cover;
+            }
+         }
+    }
+    
+    &__items{
+        //  background-color: rgb(158, 158, 158); // borrar
+         display: grid;
+         grid-template-columns: 1fr;
+         grid-template-rows: repeat(10, min-content);
+        //  grid-row-gap: 1rem;
+
+        &__info{
+            grid-row: 5 / 6;
+            // background-color: rgb(255, 175, 175); // borrar
+
+            & > p{
+                font-size: 1.5rem;
+                // line-height: 1.200;
+                font-weight: 700;
+    
+                & span{
+                    font-size: 2rem;
+                    font-weight: 400;
+                }
+            }
+        }
+
+
+        @include respond(tab-between-port-land){
+            // background-color: rgb(172, 33, 110); //borrar
+            grid-row: 1 / 3;
+        } 
+        @include respond(tab-port){
+            grid-row: 2 / 3;
+        //    background-color: rgb(172, 135, 33);//borrar
+        }        
+
+
+    }
+    &__title{
+        //  background-color: rgb(107, 189, 127); // borrar
+        grid-row: 1 / 2;
+    }
+
+
+    &__subtitle{
+        grid-row: 2 / 3;
+        font-size: 3rem;
+        font-weight: 400;
+        margin-top: .8rem;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__price{
+        grid-row: 3 / 4;
+        font-size: 4.8rem;
+        margin-top: 1.51rem;
+        color: $color-secondary;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__color{
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
+        grid-template-rows: repeat(2, min-content);
+        margin: .7rem 0;
+        grid-row-gap: .5rem;
+        // background-color: rgb(107, 189, 127); // borrar
+
+        &-name{
+            grid-column: 1 / 5;
+            grid-row: 1 / 2;
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            & span{
+                font-size: 2rem;
+                font-weight: 400;
+            }
+        }
+        &-item{
+            // grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .2s;
+            margin-right: 1rem;
+            background-color: rgb(26, 29, 27); // borrar
+            border: 4px solid #f9f9f9;
+            
+            &:hover{transform: translateY(-2px);}
+            &:active{transform: translateY(1px);}
+
+            &--active{ border: 4px solid $color-primary; }
+
+            &--1{ background-color: rgb(26, 29, 27); }
+            &--2{ background-color: rgb(92, 6, 6); }
+            &--3{ background-color: rgb(221, 221, 221); }
+        }
+    }
+    &__watt{ //// esto tiene que ir en un mixin con color
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+        display: grid;
+        grid-template-columns: repeat(4, max-content);
+        grid-template-rows: repeat(2, min-content);
+        margin: .7rem 0;
+        grid-row-gap: .5rem;
+        // background-color: rgb(107, 189, 127); // borrar
+
+        &-name{
+            grid-column: 1 / 5;
+            grid-row: 1 / 2;
+            font-size: 1.5rem;
+            font-weight: 700;
+
+            // & span{
+            //     font-size: 2rem;
+            //     font-weight: 400;
+            // }
+        }
+        &-item{
+            // grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all .2s;
+            margin-right: 1rem;
+            background-color: rgb(255, 255, 255); // borrar
+            border: 3px solid $color-grey-light-2;
+
+            
+            
+            &:hover{transform: translateY(-2px);}
+            &:active{transform: translateY(1px);}
+
+            &--active{ border: 3px solid $color-primary; }
+
+            // &--1{ background-color: rgb(26, 29, 27); }
+            // &--2{ background-color: rgb(92, 6, 6); }
+            // &--3{ background-color: rgb(221, 221, 221); }
+        }
+    }
+    &__size{
+        // grid-row: 4 / 5;
+        // font-size: 2.1rem;
+        // line-height: 1.200;
+        // font-weight: 600;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__connection{
+        // grid-row: 5 / 6;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__voltage{
+        // grid-row: 6 / 7;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__longevity{
+        // grid-row: 7 / 8;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__typelight{
+        // grid-row: 8 / 9;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__quantity{
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__btn{
+        // grid-row: 9 / 10;
+
+        margin: 2rem 0;
+        justify-self: start;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+    &__description{
+        grid-row: 11 / 12;
+        font-size: 1.5rem;            
+        font-weight: 700;
+        //  background-color: rgb(107, 189, 127); // borrar
+    }
+}
+
+.product{
+    // display: grid;
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 1fr min-content;
+    transition: all .2s;
+    // background-color: rgb(255, 199, 199) !important; //borrar
+
+    &:hover &__title{
+        color: $color-primary;
+    }
+
+    &__img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        //  grid-row: 1 / 2;
+        //  grid-column: 1 / -1;
+        //  z-index: 1;
+         transition: all .8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+    &__box-img{
+         width: 100%;
+         height: 24rem;
+         grid-row: 1 / 2;
+         grid-column: 1 / -1;
+         overflow: hidden;
+         border: 1px solid rgba(180, 180, 180, 0.192);  
+         border-radius: 3px;       
+         &:hover img{
+             transform: scale(1.2);             
+         }
+        @include respond(tab-port){
+            height: 30rem;
+        }
+        @include respond(big-desktop){
+            height: 32rem;
+        } 
+    }    
+    &__title{
+        grid-row: 2 / 3;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.063;
+        letter-spacing: 0.11px;
+        color: $color-grey-dark-2;
+        margin-top: .8rem;
+        transition: all .2s;
+        @include respond(tab-port){
+            font-size: 1.8rem;
+        }
+        //   background-color: darkkhaki; //borrar
+    }
+    &__subtitle{
+        font-size: 1.4rem;
+        font-weight: 400;
+        line-height: 1.063;
+        letter-spacing: 0.11px;
+        color: $color-brown-dark-2;
+        margin-top: .51rem;
+        @include respond(tab-port){
+            font-size: 1.6rem;
+        }
+    }
+    &__price{
+        font-size: 2rem;
+        font-weight: 700;
+        color: $color-secondary;
+        margin-top: .4rem;
+    }
+    &__quality{
+        /////// falta el support aqui para clip-mask
+        grid-column: 1 / 2;
+        grid-row: 1 /2;
+        width: 8rem;
+        height: 5rem;
+        justify-self: end;
+        display: flex;
+        justify-content: end;
+        -webkit-clip-path: polygon(40% 20%, 100% 20%, 100% 80%, 40% 80%, 20.59% 53.01%);
+        clip-path: polygon(40% 20%, 100% 20%, 100% 80%, 40% 80%, 20.59% 53.01%);
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1;        
+        color: white;
+        padding: 1.8rem 1rem 1.5rem 3.5rem;
+        background-color: $color-secondary;
+        z-index: 5;       
+    }
+
+}

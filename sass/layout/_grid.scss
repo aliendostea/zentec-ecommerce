@@ -1,0 +1,102 @@
+.main-container{
+    display: grid;
+    @include grid-template-columns-all-full-start-end;
+    grid-template-rows: minmax(55rem, 90vh) repeat(3, min-content);
+    // grid-template-columns: $grid-template-columns-all-full-start-end;
+
+    @include respond(tab-port){
+        grid-template-rows: minmax(min-content, 90vh) repeat(3, min-content);
+    }
+    &--2{
+        height: 100vh;
+        grid-template-rows: 0 minmax(min-content,1fr);
+    }
+    &--3{
+        grid-template-rows: 10rem minmax(90vh, 1fr) 30rem;
+        // grid-template-rows: 10rem minmax(min-content,1fr);
+    }
+}
+
+.wrapper-10-columns {
+  display: grid;
+  grid-template-columns: repeat(10, [col-start] 1fr [col-end]);
+  grid-gap: 2rem;
+}
+
+.wrapper-2-columns {
+  grid-column: col-start / 11;
+//   height: 10rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, [col-start] minmax(min-content, 1fr) [col-end]);
+  grid-gap: 2rem;
+   
+    &__product-detail{ 
+        grid-template-rows: min-content;
+        // grid-column-gap: 5rem;
+        // grid-template-rows: 2fr .51fr;
+        grid-column-gap: 3rem;
+
+         @include respond(tab-between-land-desktop){
+        //    background-color: rgb(216, 99, 31); //borrar
+        }
+        @include respond(tab-land){
+            // background-color: rgb(33, 77, 172); //borrar
+        }
+        @include respond(tab-between-port-land){
+            // background-color: rgb(172, 33, 110); //borrar
+             grid-template-rows: 2fr .51fr;
+        }        
+        @include respond(tab-port){
+            grid-template-columns: 1fr;
+            // grid-template-columns: .8fr 1fr;   
+            grid-template-rows: minmax(50rem, 61rem) 1fr;       
+        }
+        @include respond(phone){
+            grid-template-rows: minmax(40rem, 52rem) 1fr;
+            // background-color: rgb(43, 49, 49); //borrar
+        } 
+        @include respond(mini-phone){
+            grid-template-rows: minmax(32rem, 39rem) 1fr;
+            // background-color: rgb(50, 206, 206); //borrar
+        }    
+        @include respond(big-desktop){
+            grid-column-gap: 7rem;
+        //    background-color: rgb(95, 160, 52); //borrar
+        }
+    }
+}
+
+.test-wrapper-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  justify-content: center;
+  grid-gap: 5rem;  
+}
+
+
+/////////// ------------- layout container - flexbox & grid universal ------------- ////////////  
+.flex-direction-column{
+    flex-direction: column;
+}
+.box-center-cross-axis{
+    display: flex;
+    align-items: center;
+}
+.box-center-main-axis{
+    display: flex;
+    justify-content: center;
+}
+.box-space-between{
+    display: flex;
+    justify-content: space-between;
+}
+.box-space-around{
+    display: flex;
+    justify-content: space-around;
+}
+.box-flex-end{
+    display: flex;
+    justify-content: flex-end;
+}
+  

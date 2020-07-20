@@ -1,0 +1,306 @@
+
+//// cta new
+.btn{    
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: 1.8rem;
+  font-weight: 600; 
+  letter-spacing: .53px;
+  color: $color-primary;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;       
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all .5s; 
+
+  @include respond(phone){ 
+    // font-size: 1.1rem;   //borrar   
+  }  
+
+  &:focus {
+    outline: none;        
+  }
+  &:hover{
+    color: $color-primary-dark;
+    transform: translateY(-3px);
+  }
+  &:active{
+    transform: translateY(1px);        
+  }
+
+  &--uppercase{
+    text-transform: uppercase;
+  }
+
+  &-big{
+    @include body-btn-big-bg;
+    @include btn-color-bg-color(color-primary);
+  }
+  &--medium{
+    @include body-btn-big-bg;
+    @include btn-color-bg-color(color-primary);
+    font-size: 1.5rem;
+    padding: 1.5rem 2.5rem;
+  }
+  &-boderline{
+    @include body-btn-borderline;
+    @include btn-color-border-color(color-primary);
+  }
+  
+
+  &--disable{
+    cursor: not-allowed; 
+    color: #888;
+    border: 2px solid #bdbdbd;
+    background-color: #bdbdbd;
+      
+    &:hover, &:active {
+      color: #888;
+      background-color: #bdbdbd;
+      transform: translateY(0px); 
+    }
+
+    &[disabled]{
+        color: #888;
+        border: 2px solid #bdbdbd;
+        background-color: #bdbdbd;
+    }
+    &:hover, &:active {
+        background-color: #bdbdbd;
+        transform: translateY(0px);
+    }
+  }
+  &-round{
+    @include btn-body-round-1;
+    &:hover &__lines-x::before{
+      -moz-transform: rotate(30deg);
+          -webkit-transform: rotate(30deg);
+          -o-transform: rotate(30deg);
+          -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+    }
+    &:hover &__lines-x::after{
+      -moz-transform: rotate(-30deg);
+          -webkit-transform: rotate(-30deg);
+          -o-transform: rotate(-30deg);
+          -ms-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+    }
+
+    &__lines-x{
+      @include btn__lines-before-after;
+      background-color: transparent;
+      &::before,
+      &::after{
+          content: "";
+          display: flex;
+          width: inherit;
+          height: inherit;
+          border-radius: 5px;
+          background-color: $color-primary;
+          transition: all .3s;
+          position: absolute;
+          -moz-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+      } 
+      &::after{ 
+        -moz-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);     
+      }           
+    }   
+  }
+  &__link{
+    @include body-btn-link;
+  }
+
+  &--bg-secundary{@include btn-color-bg-color(color-secundary);}
+  &--bg-brown{@include btn-color-bg-color(color-brown-dark-2);}
+  &--bg-white{@include btn-color-bg-color(white);}
+  
+  &--boder-secundary{@include btn-color-border-color(color-secundary);}
+  &--boder-brown{@include btn-color-border-color(color-brown-dark-2);}
+  &--boder-white{@include btn-color-border-color(white);}
+}
+/*
+//// cta old
+.btn{    
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: 1.8rem;
+  font-weight: 600; 
+  letter-spacing: .53px;
+  color: $color-primary;
+  text-decoration: none;
+  white-space: nowrap;
+  -webkit-touch-callout: none; 
+  -webkit-user-select: none;       
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  transition: all .5s; 
+
+  @include respond(phone){
+    // font-size: 1.1rem;   //borrar   
+  }  
+
+  &--medium{
+    @include btn-medium-font-padding-border;
+  }
+
+  &:focus {
+    outline: none;        
+  }
+  &:hover{
+    color: rgb(235, 235, 235);
+    transform: translateY(-3px);
+  }
+  &:active{
+    transform: translateY(-1px);        
+  }
+
+  &--uppercase{
+    text-transform: uppercase;
+  }
+
+  &-big{
+    color: $color-grey-light-1;
+    @include btn-padding-border;  /// padding, border, border radius  
+    background-color: $color-primary;
+    
+    &:hover{
+      border: $btn-borderline-hover;
+      background-color: $color-primary-dark;       
+    }
+
+    &--white{ //// modificar esto, tiene que estar al final como una propiedad para todos los botones, no es un solo
+      color: $color-primary;
+      background-color: $color-grey-light-1;
+      border: 2px solid $color-grey-light-1;
+      
+      &:hover{
+          color: $color-brown-dark-2;
+          background-color: $color-grey-light-2;
+          border: 2px solid $color-grey-light-2;
+      }
+    }
+
+    &--borderline{
+      color: $color-primary;
+      background-color: transparent;        
+
+      &:hover{
+          color: $color-brown-dark-2;
+          background-color: transparent;   
+      }
+    }
+  }
+
+  &-medium{
+    color: $color-grey-light-1;
+    @include btn-medium-font-padding-border;  /// padding, border, border radius  
+    background-color: $color-primary;
+    
+    &:hover{
+      border: 2px solid $color-grey-dark-1;
+      background-color: $color-grey-dark-1;       
+    }
+
+    &--borderline{
+      color: $color-primary;
+      background-color: transparent;        
+
+      &:hover{
+          background-color: transparent;   
+      }
+    }
+  } 
+  
+  &--color-secundary{
+      color: $color-secondary;
+      border: 2px solid $color-secondary;
+  }
+  &--color-secundary-2{ //// arreglaaaaar
+      color: $color-secondary;
+      &:hover{
+        color: $color-secondary;
+        transform: translateY(-3px);
+      }
+  }
+  &--disable{
+      &[disabled]{
+        cursor: not-allowed;          
+        color: #888;
+        border: 2px solid #bdbdbd;
+        background-color: #bdbdbd;
+      }
+       &:hover, &:active {
+            transform: translateY(0px);        
+       }
+      
+  }
+  &-round{
+    @include btn-body-round-1;
+    &:hover &__lines-x::before{
+      -moz-transform: rotate(30deg);
+          -webkit-transform: rotate(30deg);
+          -o-transform: rotate(30deg);
+          -ms-transform: rotate(30deg);
+          transform: rotate(30deg);
+    }
+    &:hover &__lines-x::after{
+      -moz-transform: rotate(-30deg);
+          -webkit-transform: rotate(-30deg);
+          -o-transform: rotate(-30deg);
+          -ms-transform: rotate(-30deg);
+          transform: rotate(-30deg);
+    }
+
+    &__lines-x{
+      @include btn__lines-before-after;
+      background-color: transparent;
+      &::before,
+      &::after{
+          content: "";
+          display: flex;
+          width: inherit;
+          height: inherit;
+          border-radius: 5px;
+          background-color: $color-primary;
+          transition: all .3s;
+          position: absolute;
+          -moz-transform: rotate(45deg);
+          -webkit-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+      } 
+      &::after{ 
+        -moz-transform: rotate(-45deg);
+          -webkit-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);     
+      }           
+    }   
+  }
+}
+
+
+*/

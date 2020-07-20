@@ -1,0 +1,38 @@
+.footer{
+    grid-column: $grid-column-full-start-end;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $color-brown-dark-1;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1;
+    text-align: center;
+    padding: 2rem;
+    background-color: $color-primary;
+
+    &__line{
+        margin: auto;
+    }
+    & > *{
+        margin-bottom: 2rem;
+        // padding: 0 2rem;
+    }
+
+    &__redes{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }     
+    &__box-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & .logo:hover{            
+            transform: translateY(-3px);            
+        }         
+    } 
+}

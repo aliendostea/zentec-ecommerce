@@ -1,0 +1,477 @@
+
+{
+    "cables": [
+        {
+            "id": "CAB_0001",
+            "name": "Cable de Instalación AWG",
+            "number": "16",
+            "price": [
+                "20.14"
+            ],
+            "color": {
+                "CAB-IN1601": "Negro",
+                "CAB-IN1802": "Blanco",
+                "CAB-IN1803": "Rojo"
+            },
+            "info": {
+                "description": "(7 pelos) CU PVC 105 °C 600V",
+                "size": "Rollo de 100 mts",
+                "brand": "CABEL"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "CAB_0002",
+            "name": "Cable de Instalación AWG",
+            "number": "18",
+            "price": [
+                "12.60"
+            ],
+            "color": {
+                "CAB-IN1604": "Negro",
+                "CAB-IN1805": "Blanco",
+                "CAB-IN1806": "Rojo"
+            },
+            "info": {
+                "description": "(7 pelos) CU PVC 105 °C 600V",
+                "size": "Rollo de 100 mts",
+                "brand": "CABEL"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "CAB_0003",
+            "name": "Cable de THW",
+            "number": [
+                "08"
+            ],
+            "price": "161.96",
+            "color": {
+                "CAB-THW0816": "Negro",
+                "CAB-THW0817": "Blanco",
+                "CAB-THW0818": "Rojo"
+            },
+            "info": {
+                "description": "(7 pelos) CU PVC 105 °C 600V",
+                "size": "Rollo de 100 mts",
+                "brand": "CABEL"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "CAB_0004",
+            "name": "Cable de THW",
+            "number": [
+                "10"
+            ],
+            "price": "80.85",
+            "color": {
+                "CAB-THW0813": "Negro",
+                "CAB-THW0814": "Blanco",
+                "CAB-THW0815": "Rojo"
+            },
+            "info": {
+                "description": "(7 pelos) CU PVC 105 °C 600V",
+                "size": "Rollo de 100 mts",
+                "brand": "CABEL"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "CAB_0005",
+            "name": "Cable de THW",
+            "number": "12",
+            "price": [
+                "49.84"
+            ],
+            "color": {
+                "CAB-THW0810": "Negro",
+                "CAB-THW0811": "Blanco",
+                "CAB-THW0812": "Rojo"
+            },
+            "info": {
+                "description": "(7 pelos) CU PVC 105 °C 600V",
+                "size": "Rollo de 100 mts",
+                "brand": "CABEL"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "CAB_0006",
+            "name": "Cable de THW",
+            "number": "14",
+            "price": [
+                "30.80"
+            ],
+            "color": {
+                "CAB-THW0807": "Negro",
+                "CAB-THW0808": "Blanco",
+                "CAB-THW0809": "Rojo"
+            },
+            "info": {
+                "description": "(7 pelos) CU PVC 105 °C 600V",
+                "size": "Rollo de 100 mts",
+                "brand": "CABEL"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        }
+    ],
+    "electricity": [
+        {
+            "id": "BOM_0001",
+            "name": "Bombillo LED tipo bulbo",
+            "subname": [
+                "BOM-688AV (9w)",
+                "BOM-689AV (12w)"
+            ],
+            "price": [
+                "1.36",
+                "1.60"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "lifetime": "25.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "E27",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "test-producto3-281x292.jpg",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "BOM_0002",
+            "name": "Bombillo LED de emergencia (9w)",
+            "subname": [
+                "BOM-685AV (9w)"
+            ],
+            "price": [
+                "4.09"
+            ],
+            "color": [],
+            "info": {
+                "description": "Bombillo recargable que enciende automaticamente al irse la luz general.",
+                "size": "12,2 alto / 6 ancho",
+                "duration": "4 - 6 horas",
+                "lifetime": "20.000 horas",
+                "typeLight": "blanca",
+                "voltage": "85V-265V",
+                "conection": "E27",
+                "brand": ""
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "BOM_0003",
+            "name": "Bombillo LED ojo de wey (3w)",
+            "subname": [
+                "BOM-621AV (3w)"
+            ],
+            "price": [
+                "2.12"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "6cm alto / 4,8 ancho",
+                "lifetime": "35.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "GU5.3",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "BOM_0004",
+            "name": "Bombillo ahorrador espiral (12w)",
+            "subname": [
+                "BOM-690AV (12w)"
+            ],
+            "price": [
+                "2.27"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "14,2 alto / 4,3 ancho",
+                "lifetime": "8.000 horas / 2 años",
+                "voltage": "110V",
+                "conection": "E27",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "BOM_0005",
+            "name": "Bombillo ahorrador espiral (21w)",
+            "subname": [
+                "BOM-691AV (21w)"
+            ],
+            "price": [
+                "2.49"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "14,5 alto / 4,5 ancho",
+                "lifetime": "8.000 horas / 2 años",
+                "typeLight": "blanca",
+                "voltage": "110V",
+                "conection": "E27",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "BOM_0006",
+            "name": "Bombillo LED espiral luz blanca (20w)",
+            "subname": [
+                "BOM-684AV (20w)"
+            ],
+            "price": [
+                "2.78"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "15,5 cm alto / 6,5 cm ancho",
+                "lifetime": "25.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "E27",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "BOM_0007",
+            "name": "Bombillo LED tipo Vela (5w)",
+            "subname": [
+                "BOM-703AV (5w)"
+            ],
+            "price": [
+                "1.29"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "10 cm alto / 4,5 cm ancho",
+                "lifetime": "25.000 horas / 5 años",
+                "typeLight": "",
+                "voltage": "85-265V",
+                "conection": "E14",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "LAM_0001",
+            "name": "Lámpara LED redonda (Empotrar)",
+            "subname": [
+                "LAM-630AV (3w)",
+                "LAM-633AV (18w)"
+            ],
+            "price": [
+                "1.82",
+                "4.37"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "10 cm alto / 4,5 cm ancho",
+                "lifetime": "35.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "cable",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "LAM_0002",
+            "name": "Lámpara LED cuadrada (Empotrar)",
+            "subname": [
+                "LAM-649AV (3w)"
+            ],
+            "price": [
+                "1.97"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "2,5",
+                "lifetime": "35.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "cable",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "LAM_0003",
+            "name": "Lámpara LED redonda (superficial)",
+            "subname": [
+                "LAM-709AV (9w)",
+                "LAM-710AV (15w)",
+                "LAM-711AV (21w)"
+            ],
+            "price": [
+                "4.97",
+                "6.39",
+                "8.80"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "",
+                "lifetime": "35.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "cable",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "aquiVaDiferente": "photo1.png",
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        },
+        {
+            "id": "LAM_0004",
+            "name": "Lámpara LED panel plafón",
+            "subname": [
+                "BOM-705AV (50w)"
+            ],
+            "price": [
+                "9.49"
+            ],
+            "color": [],
+            "info": {
+                "description": "",
+                "size": "2.5 cm x 7.6 cm x 121.5 cm",
+                "lifetime": "25.000 horas / 5 años",
+                "typeLight": "blanca",
+                "voltage": "85-265V",
+                "conection": "cable",
+                "brand": "ILUM-VEN"
+            },
+            "images": {
+                "aquiVaDiferente": "photo1.png",
+                "productList": "photo1.png",
+                "productDetail01": "photo2.png",
+                "productDetail02": "photo2.png",
+                "productDetail03": "photo2.png"
+            }
+        }
+    ]
+}
+// // dudas:
+/*
+¿como manejar los datos del producto en JS?
+¿es necesario ponerlo en XMLHttpRequest o async?
+¿estos datos se montan en el servidor o en el la misma carpeta? con el .json
+si hay un mismo producto pero con diferentes tamaños, o diferentes propiedades , ¿cómo ponerlo en el objeto?
+estructura de archivos en el servidor: carpetas, html, img. Estructura de carpetas en los archivos html
+¿como montar react o una libreria en un servidor?
+no puedo hacer push en el servidor
+hay un error en el caché del servidor, no actualiza los cambios del css y/o html
+photos: como nombrarlas y ponerlas en json?
+
+¿como mandar los datos del usuario al servidor? en contactar
+
+
+no es tan importante:
+¿como mandar un email desde el servidor?
+prodcutos, carrito
+react
+git
+cache para los usuarios
+
+las credencialews 
+repositprio con el correo del hermano de miguel, le mandas tu reposit
+htpp header para que refresque el css
+
+otras dudas que no tienen nada que ver:
+hacienda, ¿cuando pagar?
+
+
+*/

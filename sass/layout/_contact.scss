@@ -1,0 +1,33 @@
+.contact-form{
+    grid-column: $grid-column-full-start-end;
+    // height: 98vh; /// verificar si se borra o no
+    display: grid;
+    grid-template-columns: .5fr 3fr .5fr;
+    grid-template-rows: .8fr minmax(30rem ,2fr) min-content;            
+
+    grid-row-gap: 4rem;    
+    padding: 4rem 4rem 14rem 4rem;
+    background-color: $color-grey-light-2; 
+
+     @include respond(tab-port){
+            // height: initial;
+            grid-template-rows: .8fr minmax(30rem ,2fr) min-content;            
+     }
+
+    & .line{
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+        justify-self: center;
+    }
+    & .paragraph--2rem{
+        grid-column: 1 / -1;
+        grid-row: 5 / 6;
+        text-align: center;
+        justify-self: center;
+    }
+    & .paragraph--4rem{
+        grid-column: 1 / -1;
+        grid-row: 6 / 7;
+        justify-self: center;
+    }
+}

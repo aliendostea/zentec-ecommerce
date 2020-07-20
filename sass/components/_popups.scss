@@ -1,0 +1,42 @@
+.popup{
+    width: 58rem;
+    height: 52rem;
+    display: grid;
+    padding: 4rem;
+    background-color: $color-grey-light-2;
+    border-radius: $border-radius-box;
+    position: relative;
+    z-index: 999;  
+    @include respond(phone){
+        width: 97%;
+    }
+
+    & h6{
+        text-align: center;
+    }
+
+    & .btn-round{
+        position: absolute;
+        top: 14px;
+        right: 15px;
+    }
+
+    & .btn-big{
+        justify-self: center;
+        align-self: center
+    }
+
+    &__message{
+        height: 9rem;
+        overflow: auto;        
+        resize: vertical;
+    }
+}
+
+.popup-overlay{
+    @include popup-overlay;     
+
+    &--active{
+        @include popup-overlay--active;
+    }
+}

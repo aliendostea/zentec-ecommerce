@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,400i|Nunito:300,300i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap"
+        rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="/sass/main.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>Zentec</title>
+</head>
+
+<body>
+    <main class="main-container main-container--3">
+        <header id="home-header" class="header header--2">
+            <nav id="header-nav" class="header-nav">
+                <div class="header-nav__box">
+                    <a class="header-nav__box__item" href="/index.html"
+                        onclick="initScroll('home-header'); return false;">Home</a>
+                    <a class="header-nav__box__item" href="/index.html#about-us"
+                        onclick="initScroll('about-us'); return false;">¿Quiénes somos?</a>
+                </div>
+                <a class="header-nav__logo-box" href="/index.html" onclick="initScroll('home-header'); return false;">
+                    <img class="header-nav__logo" src="/img/zentec-logo.svg" alt="Logo Zentec">
+                </a>
+                <div class="header-nav__box">
+                    <a class="header-nav__box__item" href="/index.html#home-products"
+                        onclick="initScroll('home-products'); return false;">Productos</a>
+                    <a class="header-nav__box__item" href="/contact.html">Contacto</a>
+                </div>
+                <button id="btn-nav-hamb" class="nav-hamb">
+                    <span class="nav-hamb__lines"></span>
+                </button>
+            </nav>
+        </header>       
+
+        <section id="productList" class="product-detail">
+            <div class="box-center-cross-axis">
+                <h1 class="heading heading--small heading--medium--color-sec margin-right-3rem">Detalle de producto</h1>
+                <nav class="nav-top">
+                    <span class="nav-top__line"></span>
+                    <ul class="nav-top__box">
+                        <li><a class="nav-top__link" href="/">Home</a></li>
+                        <span class="nav-top__span">&gt;</span>
+                        <li><a class="nav-top__link" href="/products/index.html">Lista de productos</a></li>
+                        <span class="nav-top__span">&gt;</span>
+                        <li id="navtopLinkCurrent"></li>
+                    </ul>
+                </nav>
+            </div>    
+
+            <div class="wrapper-10-columns">
+                    <!-- quitar la palabra test de html y css-->
+                <div class="wrapper-2-columns wrapper-2-columns__product-detail"> 
+                    <div id="primaryImgParent" class="product-detail__box-photos">                        
+                        <!-- <img id="imagePrimary" class="product-detail__photo" src="/img/test-producto-781x651.jpg" alt=""> -->
+                        <div id="secundaryImgParent" class="product-detail__carousel">
+                            <!-- <span class="product-detail__carousel__img product-detail__carousel__img--active"><img src="/img/test-producto3-281x292.jpg" alt=""></span> -->
+                            <!-- <span class="product-detail__carousel__img"><img src="/img/test-producto3-281x292.jpg" alt=""></span> -->
+                            <!-- <span class="product-detail__carousel__img"><img src="/img/test-producto3-281x292.jpg" alt=""></span> -->
+                            <!-- <span class="product-detail__carousel__img"><img src="/img/test-producto3-281x292.jpg" alt=""></span>                          -->
+                        </div>
+                    </div>
+
+                    <div id="parentDetail" class="product-detail__items">
+                        <!-- <h1 id="nameProduct" class="product-detail__title heading heading--medium heading--medium--color-sec"> Tomacorriente hembra polarízalo: bronce y plástico</h1> -->
+                        <!-- <h2 id="numberProduct" class="product-detail__subtitle">Bomb-665877 (12w)</h2> -->
+                        <!-- <span id="priceProduct" class="product-detail__price">$32</span> -->
+                        <div id="productInfoColor" class="product-detail__color"></div>
+                        <div id="productInfoWatt">
+                            <!-- <p class="product-detail__watt-name">Potencia (Watt):</p> -->
+                            <!-- <span id="%itemWatt-0%" class="product-detail__watt-item product-detail__watt-item--active">9w</span> -->
+                        </div>
+                        <!-- <p id="infoSize" class="product-detail__size">Medidas: <span>14cm alto / 3cm ancho</span></p> -->
+                        <!-- <p class="product-detail__connection">Conexión: <span>E27</span></p> -->
+                        <!-- <p class="product-detail__voltage">Voltaje: <span>110v</span></p> -->
+                        <!-- <p class="product-detail__longevity">Vida: <span>8000 horas / 2 años</span></p> -->
+                        <!-- <span class="product-detail__quantity">Cantidad <button>+</button></span> -->
+                        <!-- <button class="btn btn-big product-detail__btn">Contactar</button> -->
+
+                        <div id="itemsInfoParent" class="product-detail__items__info"></div>
+                        
+                        <div id="infoDescriptionParent" class="product-detail__description">
+                            <p>Más info del producto:</p>
+                            <!-- <p id="infoDescription" class="paragraph">El secreto de una buena conexión e
+                                        instalación es tener productos de primera. En
+                                        Zentec contamos con cables AWG y THW
+                                        100% cobre de producción nacional.
+                                        Disponemos de una amplia gama de lámparas
+                                        (empotradas y superficiales), interruptores,
+                                        tomacorrientes, bombillos con la
+                                        mejor tecnología LED y enchufes. ¡Tenemos lo
+                                        que buscas!
+                             </p> -->
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+
+            
+            
+            <!-- <h1 class="heading heading--small heading--color-sec argin-top-4rem argin-bottom-2rem text-center">Productos relacionados</h1> -->
+
+            <!--
+            <div class="product-list__wrapper">
+                <a href="electric/product-detail.html" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto2-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                     <span class="product__title heading heading--01">Bombillo ahorrador espiral (12w)</span> 
+                    
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>
+                <a href="#" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto2-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>
+                <a href="#" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto2-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>
+                <a href="#" class="product">
+                    <div class="product__box-img">
+                        <img class="product__img" src="/img/test-producto2-281x292.jpg" alt="">
+                    </div>
+                    <span class="product__title">Tomacorriente hembra polarízalo: bronce y plástico</span>
+                    <span class="product__subtitle">Bomb-665877 (12w)</span>
+                    <span class="product__price">$13 / 3 pack</span>
+                    <span class="product__quality">A++</span>
+                </a>
+            </div>
+            -->
+
+            <div id="nav-aside-overlay" class="nav-aside__overlay">
+                <nav class="nav-aside"></nav>
+            </div>
+
+            <!-- <div class="test__responsive">
+                test__responsive
+            </div> -->
+        </section>
+        <footer class="footer">
+            <!-- <span class="footer__line line"></span> -->
+        
+            <div class="footer__redes">
+                <a href="https://www.instagram.com/somoszentec/" class="btn btn__link">
+                    <img src="/img/icon-instagram.svg" alt="instagram Zentec">
+                </a>
+                <a href="https://www.instagram.com/somoszentec/" class="btn btn__link">
+                    <img src="/img/icon-facebook.svg" alt="facebook Zentec">
+                </a>
+            </div>
+        
+            <a class="footer__box-logo" href="/index.html">
+                <img class="logo" src="/img/zentec-logo-brown.svg" alt="Logo Zentec">
+            </a>
+            <span class="footer__line line"></span>
+        
+        
+            <div>Copyright ©2020 Zentec, Todos los derechos reservados.</div>
+        </footer>
+        <script src="/js/popups.js"></script>
+
+        
+    </main>
+    <script>
+
+    const DOMstring = {       
+        productDetail: {
+            parentDetail: '#parentDetail',
+            name: 'nameProduct',
+            number: 'numberProduct',
+            category:{
+                ID: {
+                    cables: 'CAB',
+                    bulb: 'BOM',
+                    lamp: 'LAM'
+                }
+            },
+            color: {
+                parent: '#productInfoColor',
+                childText: 'productInfoColorText',
+                colorActive: 'product-detail__color-item--active',
+                color1: '%infoColor-1%',
+                color2: '%infoColor-2%',
+                color3: '%infoColor-3%',
+                id:{
+                    CAB: 'CAB',
+                    BOM: 'BOM',
+                    other: '----1',
+                }
+            },
+            price: 'priceProduct',
+            info: {
+                itemsInfoParent: '#itemsInfoParent',
+                parentDescription: '#infoDescriptionParent',
+                description: 'infoDescription',
+                size: 'infoSize',
+                watt: {                    
+                    parent: '#productInfoWatt', 
+                    wattActive: 'product-detail__watt-item--active'
+                }
+            },
+            images: {
+                primaryParent:'#primaryImgParent',
+                primary: 'imagePrimary',
+                secundaryParent: 'secundaryImgParent',
+                secundary:[
+                    'imageSecundary',
+                    'imageTertiary',
+                    'imageQuarter',
+                    'imageFifth',
+                ]
+            },
+            navtopLinkCurrent: '#navtopLinkCurrent'
+        }
+    }
+
+    class Product {
+        constructor(element) {
+            this.setId(element);
+            this.setName(element);
+            this.setSubname(element);
+            this.setNumber(element);
+            this.setPrice(element);
+            this.setColor(element);
+            this.setWatt(element);
+            this.setInfo(element);
+            this.setImages(element);
+        }
+
+        setId(element) {
+            this.verifyExists('id', element);
+            this.id = element.id;
+        }
+
+        setName(element) {
+            this.verifyExists('name', element);
+            this.name = element.name;
+        }
+
+        setSubname(element) {
+            if (this.verifyExists('subname', element)) {
+                this.subname = element.subname;
+
+            } else {
+                this.subname = undefined;
+                // console.log(' 11111', this.name);
+            }
+        }
+
+        setNumber(element) {
+            if (this.verifyExists('number', element)) {
+                this.number = element.number;
+            } else {
+                this.number = null;
+            }
+            // this.verifyExists('number', element);
+            // this.number = element.number;
+        }
+
+        setPrice(element) {
+            this.verifyExists('price', element);
+            this.price = element.price;
+        }
+
+        setColor(element) {
+            if (this.verifyExists('color', element)) {
+                this.color = element.color;
+            } else {
+                this.color = undefined;  
+            }
+        }
+        setWatt(element) {
+            if (this.verifyExists('watt', element.info)) {
+                this.watt = element.info.watt;
+                console.log(this.watt);
+                
+            } else {
+                this.watt = undefined;
+            }
+        }
+
+        setInfo(element) {
+            this.verifyExists('info', element);
+            this.info = element.info;
+        }
+        setDescription(element) {
+            if (this.verifyExists('brand', element.info)) {
+                this.description = element.info.description;
+            } else {
+                this.description = 'No description';
+            }
+        }        
+
+        setImages(element) {
+            this.verifyExists('images', element);
+            this.images = element.images;
+        }
+
+        verifyExists(field, element) {
+            try {
+                // console.log('ifNotExistsThrowError ' + field);
+                let exists = this.ifNotExistsThrowError(field, element);
+                // console.log(exists);
+                return exists;
+            } catch (error) {
+                // console.log(false);
+                return false;
+            }
+        }
+        ifNotExistsThrowError(field, element) {
+            if (element.hasOwnProperty(field) && element[field] !== undefined && element[field] !== null && element[field] !== "" && element[field] !== []) {
+                return true;
+            }
+            throw Error('Product property not found: ' + field);
+        }
+        validateForRender(valueObj) {
+            if (valueObj !== undefined && valueObj !== null && valueObj !== '' && valueObj !== []) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        functionChangeColorOnclick(e) {
+            if (e.target.id.startsWith(DOMstring.productDetail.color.id.CAB)) {
+                document.querySelector(`.${DOMstring.productDetail.color.colorActive}`).classList.remove(DOMstring.productDetail.color.colorActive);
+                e.target.classList.add(DOMstring.productDetail.color.colorActive);
+                document.querySelector(`#${DOMstring.productDetail.color.childText}`).innerHTML = e.target.id;
+            }
+        }
+        functionChangeWattOnclick(e, thisElement) {
+            let dataIndex;
+
+             if (e.target.id.startsWith(DOMstring.productDetail.category.ID.lamp) || e.target.id.startsWith(DOMstring.productDetail.category.ID.bulb)) {
+
+                    document.querySelector(`.${DOMstring.productDetail.info.watt.wattActive}`).classList.remove(DOMstring.productDetail.info.watt.wattActive);
+                    e.target.classList.add(DOMstring.productDetail.info.watt.wattActive);
+
+                    dataIndex = e.target.getAttribute("data-index");
+                              /////hay que cambiar el productDetail.number por subname, es confuso    
+                    document.querySelector(`#${DOMstring.productDetail.number}`).innerHTML = thisElement.subname[dataIndex];
+                    document.querySelector(`#${DOMstring.productDetail.price}`).innerHTML = '$'+thisElement.price[dataIndex];
+             }
+        }
+        validateWattForRender() {
+            let thisWatts = this.watt;
+            let thisElement = this;
+            let htmlTitleWatt, htmlWatt, newHtmlWatt;
+
+                if (this.watt !== undefined && Array.isArray(this.watt) && this.watt !== '') {
+               
+                    document.querySelector(DOMstring.productDetail.info.watt.parent).classList.add('product-detail__watt');
+
+                    htmlTitleWatt = this.getHtmlDetailTitleWatt();
+                    document.querySelector(DOMstring.productDetail.info.watt.parent).insertAdjacentHTML('beforeend', htmlTitleWatt);
+
+                    this.watt.forEach((element, index) => {
+
+                         htmlWatt = this.getHtmlDetailNewWatt(index);
+                         newHtmlWatt = htmlWatt.replace(`%watt-${index}%`, this.watt[index]);
+
+                         /// este ID se inserta separado por espacios
+                         newHtmlWatt = newHtmlWatt.replace(`%itemWatt-${index}%`, this.subname[index]); 
+                         document.querySelector(DOMstring.productDetail.info.watt.parent).insertAdjacentHTML('beforeend', newHtmlWatt);
+                    });
+                            
+                    document.querySelector(DOMstring.productDetail.info.watt.parent).children[1].classList.add('product-detail__watt-item--active');     
+                    document.querySelector(DOMstring.productDetail.info.watt.parent).addEventListener('click', function (e, thisWatts) {
+                               /// thisElement === element object del producto
+                               thisElement.functionChangeWattOnclick(e, thisElement);
+                    }, false);
+                        
+                }
+        }
+        validateColorForRender() {
+            let htmlColor, newHtmlColor;
+
+            if (this.color !== undefined && !Array.isArray(this.color)) {
+
+                 htmlColor= this.getHtmlDetailColor();
+
+                 newHtmlColor = htmlColor.replace('%thisColor%', Object.keys(this.color)[0]);
+                 newHtmlColor = newHtmlColor.replace('%infoColor-1%', Object.keys(this.color)[0]);
+                 newHtmlColor = newHtmlColor.replace('%infoColor-2%', Object.keys(this.color)[1]);
+                 newHtmlColor = newHtmlColor.replace('%infoColor-3%', Object.keys(this.color)[2]);
+        
+                 document.querySelector(DOMstring.productDetail.color.parent).insertAdjacentHTML('beforeend', newHtmlColor);
+                 document.querySelector(DOMstring.productDetail.color.parent).addEventListener("click", this.functionChangeColorOnclick);
+            }
+
+                 console.log('price--', this.price);
+            
+        }
+        validateInfoForRender() {
+             let objectInfoEntries, valueObj, htmlBtn,htmlInfoDescription, htmlInfoChilds;
+
+             htmlInfoDescription = '';
+             htmlInfoChilds = '';
+
+             objectInfoEntries = Object.entries(this.info);
+             
+             objectInfoEntries.forEach(element => {
+                switch (element[1]) {
+                    case this.info.description:
+                        valueObj = this.validateForRender(this.info.description);
+                        if (valueObj) { htmlInfoDescription = this.getHtmlDetailInfoDescription(); } 
+                        break;
+
+                    case this.info.size:                        
+                        valueObj = this.validateForRender(this.info.size);
+                        if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoSize(); }
+                        break;
+
+                    case this.info.conection:
+                        valueObj = this.validateForRender(this.info.conection);
+                        if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoConection(); }
+                        break;
+
+                    case this.info.voltage:
+                        valueObj = this.validateForRender(this.info.voltage);
+                        if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoVoltage(); }
+                        break;
+
+                    case this.info.lifetime:
+                        valueObj = this.validateForRender(this.info.lifetime);
+                        if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoLifetime(); }
+                        break;
+
+                    case this.info.typeLight:
+                        valueObj = this.validateForRender(this.info.typeLight);
+                        if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoTypeLight(); }
+                        break;
+
+                    case this.info.brand:
+                        valueObj = this.validateForRender(this.info.brand);
+                        if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoBrand(); }
+                        break;
+
+                
+                    default:
+                        break;
+                }
+             });
+
+            document.querySelector(DOMstring.productDetail.info.itemsInfoParent).insertAdjacentHTML('beforeend', htmlInfoChilds);
+            // console.log(htmlInfoChilds);
+            
+            htmlBtn = this.getHtmlDetailBuyBtn();
+
+            document.querySelector(DOMstring.productDetail.info.itemsInfoParent).insertAdjacentHTML('beforeend', htmlBtn);
+            document.querySelector(DOMstring.productDetail.info.parentDescription).insertAdjacentHTML('beforeend', htmlInfoDescription);
+
+           
+            /*
+             console.log(this.description);
+            console.log(this.size);
+            console.log(this.lifetime);
+            console.log(this.typeLight);
+            console.log(this.voltage);
+            console.log(this.conection);
+            console.log(this.brand);
+
+            this.description
+            this.size
+            this.lifetime
+            this.typeLight 
+            this.voltage
+            this.conection
+            this.brand
+
+           
+
+            ifNotExistsThrowError(field, element) {
+                if (element.hasOwnProperty(field) && element[field] !== null) {
+                    return true;
+                }
+                throw Error('Product property not found: ' + field);
+            }
+             */
+            
+
+            // if (valueObj !== undefined) {
+            //     return true;
+            // } else {
+            //     return false;
+            // }
+
+        }
+
+        renderAsDetail() {
+            let objectEntries, valueObj, htmlChilds, htmlImg, htmlInfoDescription, newHtmlChilds;
+
+            /*
+            htmlImg = this.getHtmlDetailImage();
+
+            htmlChilds = this.getHtmlDetailName();
+            htmlChilds += this.getHtmlDetailSubname();
+            htmlChilds += this.getHtmlDetailNumber();
+            htmlChilds += this.getHtmlDetailPrice();
+            htmlChilds += this.getHtmlDetailInfoSize();
+            htmlChilds += this.getHtmlDetailInfoConection();
+            htmlChilds += this.getHtmlDetailInfoVoltage();
+            htmlChilds += this.getHtmlDetailInfoLifetime();
+            
+            htmlInfoDescription = this.getHtmlDetailInfoDescription();
+            */
+
+            this.validateColorForRender();
+            this.validateWattForRender();
+            this.validateInfoForRender();
+
+            objectEntries = Object.entries(this);
+
+            
+            objectEntries.forEach(element => {
+                
+
+                switch (element[1]) {                   
+                    case this.name:
+                        valueObj = this.validateForRender(this.name);
+                        if (valueObj) { htmlChilds = this.getHtmlDetailName();} 
+                        break;
+
+                    case this.subname:
+                        valueObj = this.validateForRender(this.subname);
+                        if (valueObj) { htmlChilds += this.getHtmlDetailSubname();} 
+                        break;
+
+                    case this.number:
+                        
+                        valueObj = this.validateForRender(this.number);
+                        
+                         if (valueObj) {   htmlChilds += this.getHtmlDetailNumber();}                 
+                        
+
+                        break;
+
+                    case this.price:
+                        valueObj = this.validateForRender(this.price);
+                        if (valueObj) { htmlChilds += this.getHtmlDetailPrice();}
+                        break;
+
+                    case this.images:
+                        valueObj = this.validateForRender(this.images);
+                        if (valueObj) { htmlImg = this.getHtmlDetailImage(); }                        
+                        break;
+
+                    default:
+                }
+                
+            });
+
+            /*
+            ///// por hacer
+            // ---- terminada// verificar los cables que da undefined en detalle de productos. Es el this.info en el swich
+            // crear colores un producto
+            // crear los precios para un solo producto. UNO SOLO
+            // Arreglar los precios estan saliendo cortados por una posicion en el array de this.price[0]. 
+            // crear productos relacionados dependiendo de la categoria del producto. Se puede ser algo aleatorio
+            // verificar el JSON, seguro faltaran propiedades por mostrar en cada producto
+            // ---- terminada// crear imagenes por defecto para cada categoria o tipo de producto
+            // terminar el contactar
+            // ver que falta en toda la web en las tareas del evernote
+            // poner el ++A solo para los bombillos
+            // modificar las rutas de las imagenes
+            */
+
+
+            document.querySelector(DOMstring.productDetail.navtopLinkCurrent).insertAdjacentHTML('beforeend', this.getHtmlDetailNavtopLinkCurrent());
+            document.querySelector(DOMstring.productDetail.parentDetail).insertAdjacentHTML('beforeend', htmlChilds);
+            document.querySelector(DOMstring.productDetail.images.primaryParent).insertAdjacentHTML('beforeend', htmlImg);
+        }  
+        
+        getHtmlDetailNavtopLinkCurrent() {            
+            return `<a class="nav-top__link nav-top__link--current" href="/products/electric/product-detail.html?product_id=${this.id}">${this.name}</a>`;
+        }
+        getHtmlDetailImage() {
+            return `<img id="imagePrimary" class="product-detail__photo" src="/img/${this.images.productDetail01}" alt="${this.name}">`;
+        }
+        getHtmlDetailName() {
+            return `<h1 class="product-detail__title heading heading--medium heading--medium--color-sec">${this.name}</h1> `;
+        }
+        getHtmlDetailSubname() {
+            return `<h2 id="numberProduct" class="product-detail__subtitle">${this.subname[0]}</h2> `;
+        }
+        getHtmlDetailNumber() {
+            return `<h2 id="numberProduct" class="product-detail__subtitle">Num: ${this.number}</h2> `;
+        }
+        getHtmlDetailPrice() {
+            return `<span id="priceProduct" class="product-detail__price">$${this.price[0]}</span>`;
+        }
+        getHtmlDetailColor() {
+            return ` <p class="product-detail__color-name">Color:  <span id="${DOMstring.productDetail.color.childText}">%thisColor%</span></p>
+                    <span id="${DOMstring.productDetail.color.color1}" class="product-detail__color-item product-detail__color-item--1 product-detail__color-item--active"></span>
+                    <span id="${DOMstring.productDetail.color.color2}" class="product-detail__color-item product-detail__color-item--2"></span>
+                    <span id="${DOMstring.productDetail.color.color3}" class="product-detail__color-item product-detail__color-item--3"></span>`;
+        }
+        getHtmlDetailTitleWatt() {
+            return ` <p class="product-detail__watt-name">Potencia (Watt):</p>
+                      `;
+        }
+        getHtmlDetailNewWatt(index) {
+            return `<span id="%itemWatt-${index}%" data-index="${index}" class="product-detail__watt-item">%watt-${index}%</span>`;
+        }
+        getHtmlDetailInfoSize() {
+            return `<p id="infoSize" class="product-detail__size">Medidas:<span> ${this.info.size}</span></p>`;
+        }
+        getHtmlDetailInfoConection() {
+            return `<p class="product-detail__connection">Conexión: <span>${this.info.conection}</span></p>`;
+        }
+        getHtmlDetailInfoVoltage() {
+            return `<p class="product-detail__voltage">Voltaje: <span>${this.info.voltage}</span></p> `;
+        }
+        getHtmlDetailInfoLifetime() {
+            return `<p class="product-detail__longevity">Vida: <span>${this.info.lifetime}</span></p> `;
+        }
+        getHtmlDetailInfoDescription() {
+            return `<p id="infoDescription" class="paragraph"> ${this.info.description} </p> `;
+        }
+        getHtmlDetailInfoTypeLight() {
+            return `<p class="product-detail__typelight">Tipo de luz: <span>${this.info.typeLight}</span></p> `;
+        }
+        getHtmlDetailInfoBrand() {
+            return `<p class="product-detail__brand">Marca: <span>${this.info.brand}</span></p> `;
+        }
+        getHtmlDetailBuyBtn() {
+            return ` <a class="btn" href="/contact.html"><button class="btn btn-big product-detail__btn">Contactar</button> </a> `;
+        }
+    }
+
+    let getParams = function (url) {
+            var params = {};
+            var parser = document.createElement('a');
+            parser.href = url;
+            var query = parser.search.substring(1);
+            var vars = query.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split('=');
+                // console.log(pair);
+
+                params[pair[0]] = decodeURIComponent(pair[1]);
+            }
+            return params;
+    };
+
+    let params = getParams(window.location.href);
+
+    function getProductCatalog() {
+        const url_products_catalog = '/products_catalog.json';
+        const request = new XMLHttpRequest();
+        request.open("GET", url_products_catalog);
+        request.responseType = 'json';
+
+        request.send();
+        let products_catalog = [];
+        request.onload = function () {
+            // console.log('Tardo Mas!!!! :(');
+            products_catalog = request.response;
+            console.log(products_catalog);
+            loadProducts(products_catalog);
+
+        }
+
+    }
+    getProductCatalog();
+
+    function loadProducts(products_catalog) {
+        let elementCategoryProduct, elementProduct;
+
+        // console.log(Object.entries(products_catalog));
+        const objectEntriesCatalog = Object.entries(products_catalog);
+
+        objectEntriesCatalog.forEach(element => {
+
+            elementCategoryProduct = element[1].filter(obj => obj.id === params.product_id);
+            
+            // elementProduct = elementCategoryProduct.filter(obj => console.log(obj));
+            if (elementCategoryProduct[0] !== undefined) {
+                
+                console.log('product', elementCategoryProduct[0]);
+
+                const product = new Product(elementCategoryProduct[0]);
+                product.renderAsDetail();
+            }
+            // console.log('este no', elementCategoryProduct[0]);
+
+            
+            
+        });
+
+        /*
+        //// --------- asi lo hacia antes
+
+        let element = products_catalog.cables.filter(obj => obj.id === params.product_id); 
+        const product = new Product(element[0]);
+        product.renderAsDetail();   
+        */
+        
+
+    }
+
+   
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+
+.form{
+    &__box{
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;    
+        display: grid;
+        grid-template-columns: repeat(9, 1fr);
+        grid-template-rows: repeat(3, min-content);
+        align-content: center;
+        grid-row-gap: 1rem;
+        @include respond(tab-port){
+            grid-column: 1 /4;
+        }
+    }
+    &__label{
+        grid-column: 1 / 10;
+        grid-row: 1 / 2;   
+        font-size: 3.4rem;
+        font-weight: 800;
+
+        &--error {
+           color: $color-red; 
+           transition: all .5s;
+        }
+    }
+    &__textarea{
+        grid-column: 1 / -1;
+        grid-row: 2 / 3;        
+        height: 9rem;
+        resize: vertical; //// esto esta en prueba, revisar si funciona
+        font-size: 6.5rem;
+        font-weight: 200;
+        font-family: $font-primary;
+        color: inherit;
+        color: $color-primary;
+        overflow-x: hidden;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid $color-grey-dark-1;
+        transition: all .3s;
+        @include respond(phone){
+            height: 7rem;
+            font-size: 4.5rem;
+        }
+        @include respond(mini-phone){
+            height: 6rem;
+            font-size: 3.5rem;
+        }
+        &:focus{
+            outline: none;
+            border-bottom: 2px solid $color-primary; 
+        }
+       
+        &:focus:invalid {
+            border-bottom: 2px solid $color-red; 
+        }
+        &--medium{
+            height: 24rem;
+        }
+        &--error {
+            border-bottom: 2px solid $color-red; 
+        }
+    }
+    &__step{
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;   
+        font-size: 3.4rem;
+        font-weight: 500; 
+        justify-self: end;
+        &__number{
+            background-color: darksalmon;
+            font-weight: 800; 
+        }
+    }
+    &__btn{
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;   
+        justify-self: center; 
+
+        @include respond(phone){
+            display: flex;
+            align-content: center;
+        }
+    }  
+    &__errors{
+        grid-column: 1 /7;
+        grid-row: 3 /4;
+        display: flex;
+        align-items: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: $color-red;
+        & img{
+            height: 4rem;
+            width: 4rem;
+            margin-right: 1rem;
+            fill: orangered;
+        }
+        @include respond(phone){
+            grid-column: 1 /5;
+        }
+    } 
+}

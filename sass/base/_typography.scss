@@ -1,0 +1,115 @@
+.heading{
+  font-family: $font-primary;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  color: $color-primary;
+  margin: 0;
+  padding: 0;
+
+  &--display{
+      font-size: 13rem;
+  }
+  &--big{ 
+      font-size: 10rem;
+      &--color-sec{color: $color-secondary;}
+      @include respond(tab-port){
+          font-size: 7rem;
+      }  
+      
+  }   
+  &--big-2{
+      font-size: 8rem;      
+      @include respond(mini-phone){
+          font-size: 6rem;
+      }
+  }
+  &--medium{
+      font-size: 5rem;
+      &--color-sec{color: $color-secondary;}
+      @include respond(mini-phone){
+          font-size: 4rem;
+      }
+  }
+  &--small{
+      font-size: 3.5rem;
+  }
+  &--small-2{
+      font-size: 2.4rem;
+  }
+  &--0{
+      font-size: 1.5rem;
+      font-weight: 600;
+  }
+  &--color-sec{color: $color-secondary;}
+  &--color-brown{color: $color-brown-dark-2;} 
+  &--color-gray{color: $color-grey-dark-1;} 
+}
+.paragraph{
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: .09px;
+    margin: 0;
+    padding: 0;
+
+    @include respond(tab-port){
+        font-size: 2rem;
+        line-height: 1.2;
+    } 
+    &--2rem{
+        font-size: 2rem;
+        font-weight: 400;
+        color: $color-brown-dark-1;
+    }
+    &--4rem{ ///// modificaaaar nombre aqui y en html, no puede tener este nombre
+        font-size: 4rem;
+        font-weight: 500;
+        color: $color-brown-dark-1;
+
+         @include respond(tab-port){
+            font-size: 3rem;
+         } 
+         @include respond(phone){
+             display: block;
+         }
+    }
+}
+
+/// esto es para la pagina en construccion
+.heading-contruction{
+  font-family: $font-primary;
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+
+  &--big{ 
+      font-size: 8rem;
+      font-weight: 800;
+      color: $color-secondary;
+      color: $color-secondary;      
+      @include respond(tab-port){
+        font-size: 5.5rem;
+      }
+      @include respond(phone){
+        font-size: 3.5rem;
+      }
+      @include respond(mini-phone){
+        font-size: 2.5rem;
+      }
+  } 
+   &--small{ 
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: $color-brown-dark-1;
+      text-align: center;
+      @include respond(tab-port){
+            text-align: center; 
+      }
+      @include respond(phone){
+            font-size: 1.8rem;
+      }     
+  }
+} 
