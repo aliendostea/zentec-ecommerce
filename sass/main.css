@@ -2315,7 +2315,7 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border: 1px solid #D2A056;
+  border: 2px solid #D2A056;
   border-radius: 50%;
   -webkit-transition: all 0.2s cubic-bezier(0.65, 0.26, 0.34, 0.96);
   transition: all 0.2s cubic-bezier(0.65, 0.26, 0.34, 0.96);
@@ -2348,14 +2348,14 @@ img {
   -webkit-transition: all .3s;
   transition: all .3s;
   position: absolute;
-  top: -4px;
+  top: -3.5px;
   left: 0;
 }
 
 .slider__btn__item::after {
   -webkit-transform: rotate(40deg);
   transform: rotate(40deg);
-  top: 4px;
+  top: 3.3px;
 }
 
 .slider__btn-previous {
@@ -3193,6 +3193,7 @@ img {
   grid-column-gap: 6rem;
   font-size: 1.65rem;
   font-weight: 600;
+  color: #14103D;
   white-space: nowrap;
 }
 

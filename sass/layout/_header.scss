@@ -163,6 +163,7 @@
         grid-column-gap: 6rem;        
         font-size: 1.65rem;
         font-weight: 600;
+        color: $color-secondary;
         white-space: nowrap;
 
         @include respond(tab-port){

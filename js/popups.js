@@ -39,16 +39,17 @@ function openNavAsideOverlay () {
 }
 function navAsideHtmlFunction() {
     return `
+            <img class="nav-aside__logo" src="/img/zentec-logo-brown.svg" alt="Logo Zentec">
             <div class="nav-aside__redes">
                 <a href="https://www.instagram.com/somoszentec/" class="btn btn__link">
                         <img src="/img/icon-instagram.svg" alt="instagram Zentec">
                 </a>
-                <a href="https://www.instagram.com/somoszentec/" class="btn btn__link">
+                <a href="https://www.facebook.com/Somos-Zentec-111245983941665/" class="btn btn__link">
                     <img src="/img/icon-facebook.svg" alt="facebook Zentec">
                 </a>
             </div>
             <a href="/index.html" class="nav-aside__link"><span>Home</span></a>
-            <a href="/index.html#about-us" class="nav-aside__link"><span>¿Quienes somos?</span></a>
+            <a href="/index.html#about-us" class="nav-aside__link"><span>¿Quiénes somos?</span></a>
             <a href="/products/index.html" class="nav-aside__link"><span>Productos</span></a>
             <a href="/contact.html" class="nav-aside__link"><span>Contactar</span></a>
             <div class="nav-aside__box">
@@ -56,7 +57,6 @@ function navAsideHtmlFunction() {
                 <span class="nav-aside__numbers">+58 (241) 814 29 13 <br> +58 (414) 018 08 38</span>
             </div>
             <button id="nav-aside-btn-x" class="btn btn-round"><span class="btn-round__lines-x"></span></button>
-            <img class="nav-aside__logo" src="/img/zentec-logo-brown.svg" alt="Logo Zentec">
             `;
 }
 

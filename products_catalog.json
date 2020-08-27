@@ -227,8 +227,8 @@
                 ]
             },
             "images": {
-                "productList": "test-producto-781x651.jpg",
-                "productDetail01": "test-producto-781x651.jpg",
+                "productList": "BOM-685AV_(9W)_2.gif",
+                "productDetail01": "BOM-685AV_(9W)_2.gif",
                 "productDetail02": "photo2.png",
                 "productDetail03": "photo2.png"
             }
@@ -284,8 +284,8 @@
                 ]
             },
             "images": {
-                "productList": "test-producto-781x651.jpg",
-                "productDetail01": "test-producto-781x651.jpg",
+                "productList": "photo_2020-08-22_01-03-51.jpg",
+                "productDetail01": "photo_2020-08-22_01-03-51.jpg",
                 "productDetail02": "photo2.png",
                 "productDetail03": "photo2.png"
             }
@@ -312,9 +312,9 @@
                     "20w"
                 ]
             },
-            "images": {
-                "productList": "test-producto-781x651.jpg",
-                "productDetail01": "test-producto-781x651.jpg",
+            "images": { 
+                "productList": "photo_2020-08-22_00-57-01.jpg",
+                "productDetail01": "photo_2020-08-22_00-57-01.jpg",
                 "productDetail02": "photo2.png",
                 "productDetail03": "photo2.png"
             }

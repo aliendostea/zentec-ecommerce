@@ -62,10 +62,9 @@
   min-height: 75rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; 
   align-items: center;
   background-color: $color-primary;
-  // background-color: $color-grey-light-2;
   // overflow-y: auto;
   overflow-y: scroll;
   transition: all .8s cubic-bezier(.65,.26,.34,.96);
