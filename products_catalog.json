@@ -34,41 +34,7 @@
                 "productDetail02": "photo2.png",
                 "productDetail03": "photo2.png"
             }
-        },
-        {
-            "id": "CAB_0002",
-            "name": "Cable de Instalación AWG",
-            "number": [
-                "16",
-                "18"
-            ],
-            "price": [
-                "12.60"
-            ],
-            "color": [
-                {
-                "CAB-IN1601": "Negro",
-                "CAB-IN1802": "Blanco",
-                "CAB-IN1803": "Rojo"
-                },
-                {
-                "CAB-IN1604": "Negro",
-                "CAB-IN1805": "Blanco",
-                "CAB-IN1806": "Rojo"
-                }
-            ],
-            "info": {
-                "description": "(7 pelos) CU PVC 105 °C 600V",
-                "size": "Rollo de 100 mts",
-                "brand": ""
-            },
-            "images": {
-                "productList": "cab-rojo1.png",
-                "productDetail01": "cab-rojo1.png",
-                "productDetail02": "photo2.png",
-                "productDetail03": "photo2.png"
-            }
-        },
+        },       
         {
             "id": "CAB_0003",
             "name": "Cable de THW",
@@ -106,78 +72,6 @@
                 "CAB-THW0809": "Rojo"
                 }
             ],
-            "info": {
-                "description": "(7 pelos) CU PVC 105 °C 600V",
-                "size": "Rollo de 100 mts",
-                "brand": ""
-            },
-            "images": {
-                "productList": "cab-negro.png",
-                "productDetail01": "cab-negro.png",
-                "productDetail02": "photo2.png",
-                "productDetail03": "photo2.png"
-            }
-        },
-        {
-            "id": "CAB_0004",
-            "name": "Cable de THW",
-            "number": [
-                "10"
-            ],
-            "price": ["80.85"],
-            "color": {
-                "CAB-THW0813": "Negro",
-                "CAB-THW0814": "Blanco",
-                "CAB-THW0815": "Rojo"
-            },
-            "info": {
-                "description": "(7 pelos) CU PVC 105 °C 600V",
-                "size": "Rollo de 100 mts",
-                "brand": ""
-            },
-            "images": {
-                "productList": "cab-negro.png",
-                "productDetail01": "cab-negro.png",
-                "productDetail02": "photo2.png",
-                "productDetail03": "photo2.png"
-            }
-        },
-        {
-            "id": "CAB_0005",
-            "name": "Cable de THW",
-            "number": "12",
-            "price": [
-                "49.84"
-            ],
-            "color": {
-                "CAB-THW0810": "Negro",
-                "CAB-THW0811": "Blanco",
-                "CAB-THW0812": "Rojo"
-            },
-            "info": {
-                "description": "(7 pelos) CU PVC 105 °C 600V",
-                "size": "Rollo de 100 mts",
-                "brand": ""
-            },
-            "images": {
-                "productList": "cab-negro.png",
-                "productDetail01": "cab-negro.png",
-                "productDetail02": "photo2.png",
-                "productDetail03": "photo2.png"
-            }
-        },
-        {
-            "id": "CAB_0006",
-            "name": "Cable de THW",
-            "number": "14",
-            "price": [
-                "30.80"
-            ],
-            "color": {
-                "CAB-THW0807": "Negro",
-                "CAB-THW0808": "Blanco",
-                "CAB-THW0809": "Rojo"
-            },
             "info": {
                 "description": "(7 pelos) CU PVC 105 °C 600V",
                 "size": "Rollo de 100 mts",

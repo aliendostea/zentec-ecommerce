@@ -72,12 +72,9 @@ class Product {
     setInfo(element) {
         if (this.verifyExists('info', element)) {
             this.info = element.info;
-
         } else {
             this.info = undefined;
         }
-        // this.verifyExists('info', element);
-        // this.info = element.info;
     }
 
     setImages(element) {
@@ -144,29 +141,23 @@ class Product {
                     }
                     break;
                 case this.name:
-
                     valueObj = this.validateForRender(this.name);
                     if (valueObj) {
                         htmlChilds += this.getHtmlProductName();
-
-                    } else {
-                        // console.log(valueObj);
-                        // console.log('this.name DONT exist!', this.name);
-                    }
-                    
+                    } 
                     break;
                 case this.subname:
                     valueObj = this.validateForRender(this.subname);
                     if (valueObj) {
                         // htmlChilds += this.getHtmlProductSubname();
-                    } else {
-                        // console.log('this.name DONT exist!', this.subname);
-                    }
-                   
+                    } 
                     break;
-                case 'number':
-                     if (this.number !== undefined) {                       
-                    }
+                case this.number:
+                     valueObj = this.validateForRender(this.number);
+                    if (valueObj) {
+                      let allNumberCable = this.number.join(" / ");
+                      htmlChilds += this.getHtmlProductSubnameList(allNumberCable);
+                    } 
                     break;
                 case 'price':
                     if (this.price !== undefined) {                       
@@ -182,9 +173,7 @@ class Product {
                     if (valueObj) {
                         allWatts = this.info.watt.join(' / ');
                         htmlChilds += this.getHtmlProductSubnameList(allWatts);
-                    } else {
-                        // console.log('this.name DONT exist!', this.info.watt);
-                    }
+                    } 
                     break;
                 case 'images':
                      if (this.images !== undefined) {                       
