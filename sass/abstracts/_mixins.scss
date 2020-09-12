@@ -250,6 +250,54 @@ $bp-small: 37.5em;    // 600px;
     padding: 5rem 10rem 4rem 10rem;
 }
 
+/// mixins product detail color, watt, num
+@mixin product-element-circles-click {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    grid-template-rows: repeat(2, min-content);
+    margin: .7rem 0;
+    grid-row-gap: .5rem;
+
+    &-name{
+        grid-column: 1 / 5;
+        grid-row: 1 / 2;
+        font-size: 1.5rem;
+        font-weight: 700;
+
+        & span{
+            font-size: 2rem;
+            font-weight: 400;
+        }
+    }
+    &-item{        
+        grid-row: 2 / 3;
+        width: 5rem;
+        height: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all .2s;
+        margin-right: 1rem;
+        background-color: rgb(255, 255, 255); // borrar
+        border: 4px solid $color-grey-light-2;
+
+        
+        &:hover{transform: translateY(-2px);}
+        &:active{transform: translateY(1px);}
+
+        &--active{ border: 4px solid $color-primary; }
+
+        // &--1{ background-color: rgb(26, 29, 27); }
+        // &--2{ background-color: rgb(92, 6, 6); }
+        // &--3{ background-color: rgb(221, 221, 221); }
+    }
+  
+}
 
 /// popup overlay
 @mixin popup-overlay {
@@ -274,4 +322,3 @@ $bp-small: 37.5em;    // 600px;
 }
 
 
- 

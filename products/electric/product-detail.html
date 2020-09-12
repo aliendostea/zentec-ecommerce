@@ -70,10 +70,19 @@
                     </div>
 
                     <div id="parentDetail" class="product-detail__items">
+                        <span class="product-detail__instock">Disponible</span>
                         <!-- <h1 id="nameProduct" class="product-detail__title heading heading--medium heading--medium--color-sec"> Tomacorriente hembra polarízalo: bronce y plástico</h1> -->
                         <!-- <h2 id="numberProduct" class="product-detail__subtitle">Bomb-665877 (12w)</h2> -->
                         <!-- <span id="priceProduct" class="product-detail__price">$32</span> -->
-                        <div id="productInfoColor" class="product-detail__color"></div>
+                        <div id="productInfoColor"></div>
+                        <div class="product-detail__cableNum">
+                            <!-- <p class="product-detail__watt-name">Número:</p>
+                            <span  data-index="0"
+                                class="product-detail__watt-item product-detail__watt-item--active">16</span>
+                                <span 
+                                data-index="1" class="product-detail__watt-item">18
+                            </span> -->
+                        </div>
                         <div id="productInfoWatt">
                             <!-- <p class="product-detail__watt-name">Potencia (Watt):</p> -->
                             <!-- <span id="%itemWatt-0%" class="product-detail__watt-item product-detail__watt-item--active">9w</span> -->
@@ -295,8 +304,6 @@
         setWatt(element) {
             if (this.verifyExists('watt', element.info)) {
                 this.watt = element.info.watt;
-                console.log(this.watt);
-                
             } else {
                 this.watt = undefined;
             }
@@ -350,31 +357,46 @@
                 document.querySelector(`#${DOMstring.productDetail.color.childText}`).innerHTML = e.target.id;
             }
         }
-        functionChangeWattOnclick(e, thisElement) {
+        functionChangeCirclesOnclick(e, classActiveElement) {
             let dataIndex;
 
-             if (e.target.id.startsWith(DOMstring.productDetail.category.ID.lamp) || e.target.id.startsWith(DOMstring.productDetail.category.ID.bulb)) {
+             ////// si el ID empieza con CAB o BOM o LAM entra en el if
+             if (e.target.id.startsWith(DOMstring.productDetail.category.ID.lamp) || e.target.id.startsWith(DOMstring.productDetail.category.ID.bulb) || e.target.id.startsWith(DOMstring.productDetail.category.ID.cables)) {
 
-                    document.querySelector(`.${DOMstring.productDetail.info.watt.wattActive}`).classList.remove(DOMstring.productDetail.info.watt.wattActive);
-                    e.target.classList.add(DOMstring.productDetail.info.watt.wattActive);
+                /// se agarra el data-index del e.target 
+                dataIndex = e.target.getAttribute("data-index");
+                /// se remueve la clase classActiveElement del elemento
+                document.querySelector(`.${classActiveElement}`).classList.remove(classActiveElement);
+                /// se añade la clase classActiveElement al elemento donde se le dio click
+                e.target.classList.add(classActiveElement);
 
-                    dataIndex = e.target.getAttribute("data-index");
-                              /////hay que cambiar el productDetail.number por subname, es confuso    
-                    document.querySelector(`#${DOMstring.productDetail.number}`).innerHTML = thisElement.subname[dataIndex];
-                    document.querySelector(`#${DOMstring.productDetail.price}`).innerHTML = '$'+thisElement.price[dataIndex];
+                /// queryselector al number, price, color para hacer un innerHtml de la data real del object producto
+                            /////hay que cambiar el productDetail.number por subname, es confuso    
+                if (this.subname !== undefined && this.subname !== null) document.querySelector(`#${DOMstring.productDetail.number}`).innerHTML = this.subname[dataIndex];
+                document.querySelector(`#${DOMstring.productDetail.price}`).innerHTML = '$'+this.price[dataIndex];
+
+                //// si this.color existe se llama a la function validateColorForRender para que imprima,cambie los colores con la data nueva del onclick
+                this.validateColorForRender(dataIndex);
              }
         }
+        callAddEventListenerForButtons(htmlParentElement, classActiveElement) {
+            let thisElementObject = this;
+            htmlParentElement.addEventListener('click', function (e) {                
+                thisElementObject.functionChangeCirclesOnclick(e, classActiveElement);
+            }, false); 
+        }
         validateWattForRender() {
-            let thisWatts = this.watt;
-            let thisElement = this;
+            // let thisWatts = this.watt;
+            let classActiveElement = DOMstring.productDetail.info.watt.wattActive;
+            let htmlWattParent = document.querySelector(DOMstring.productDetail.info.watt.parent);
             let htmlTitleWatt, htmlWatt, newHtmlWatt;
 
                 if (this.watt !== undefined && Array.isArray(this.watt) && this.watt !== '') {
                
-                    document.querySelector(DOMstring.productDetail.info.watt.parent).classList.add('product-detail__watt');
+                    htmlWattParent.classList.add('product-detail__watt');
 
                     htmlTitleWatt = this.getHtmlDetailTitleWatt();
-                    document.querySelector(DOMstring.productDetail.info.watt.parent).insertAdjacentHTML('beforeend', htmlTitleWatt);
+                    htmlWattParent.insertAdjacentHTML('beforeend', htmlTitleWatt);
 
                     this.watt.forEach((element, index) => {
 
@@ -383,35 +405,88 @@
 
                          /// este ID se inserta separado por espacios
                          newHtmlWatt = newHtmlWatt.replace(`%itemWatt-${index}%`, this.subname[index]); 
-                         document.querySelector(DOMstring.productDetail.info.watt.parent).insertAdjacentHTML('beforeend', newHtmlWatt);
+                         htmlWattParent.insertAdjacentHTML('beforeend', newHtmlWatt);
                     });
                             
-                    document.querySelector(DOMstring.productDetail.info.watt.parent).children[1].classList.add('product-detail__watt-item--active');     
-                    document.querySelector(DOMstring.productDetail.info.watt.parent).addEventListener('click', function (e, thisWatts) {
-                               /// thisElement === element object del producto
-                               thisElement.functionChangeWattOnclick(e, thisElement);
-                    }, false);
-                        
+                    htmlWattParent.children[1].classList.add(classActiveElement);   
+                    
+                    //// llame al padre con un addEventListener on click 
+                    this.callAddEventListenerForButtons(htmlWattParent, classActiveElement);
                 }
         }
-        validateColorForRender() {
-            let htmlColor, newHtmlColor;
+        validateNumberCableForRender() {
+            // Array.isArray(this.number)
+                
+                //// se verifica si existe el object con el if
+            if (this.number !== undefined && this.number !== null && this.number !== '') {
+                //// se declaran las variables a usar y el padre del elemento para insertar el html
+                let htmlTitleElement, htmlElementCircle, newHtmlCircle;
+                let htmlParentElement = document.querySelector('.product-detail__cableNum');
+                let classActiveElement = DOMstring.productDetail.info.watt.wattActive;
 
-            if (this.color !== undefined && !Array.isArray(this.color)) {
+                /// se llama a la function que hace el return con el titulo del elemento
+                htmlTitleElement = this.getHtmlDetailCableNumber();
+                /// se inserta el html el titulo en el padre 
+                htmlParentElement.insertAdjacentHTML('beforeend', htmlTitleElement);
+                /// foreach con el array/object para sacar cada elemento 
+                this.number.forEach((element, index) => {
 
-                 htmlColor= this.getHtmlDetailColor();
+                    /// llamamos a la function que hace el return del html
+                    htmlElementCircle = this.getHtmlDetailNewCableNumber(index);
+                    /// genera un replace con index y con datos reales del object del producto
+                    newHtmlCircle = htmlElementCircle.replace(`%itemObj-${index}%`, this.number[index]);
 
-                 newHtmlColor = htmlColor.replace('%thisColor%', Object.keys(this.color)[0]);
-                 newHtmlColor = newHtmlColor.replace('%infoColor-1%', Object.keys(this.color)[0]);
-                 newHtmlColor = newHtmlColor.replace('%infoColor-2%', Object.keys(this.color)[1]);
-                 newHtmlColor = newHtmlColor.replace('%infoColor-3%', Object.keys(this.color)[2]);
+                    /// este ID se inserta separado por espacios
+                    newHtmlCircle = newHtmlCircle.replace(`%itemID-${index}%`, `${this.id}-span${index}`);
+                    htmlParentElement.insertAdjacentHTML('beforeend', newHtmlCircle);
+                });
+
+                /// se le agrega la clase active al elemento circle
+                htmlParentElement.children[1].classList.add(classActiveElement);   
+
+                //// llame al padre con un addEventListener on click 
+                this.callAddEventListenerForButtons(htmlParentElement, classActiveElement);
+            }
+        }
         
-                 document.querySelector(DOMstring.productDetail.color.parent).insertAdjacentHTML('beforeend', newHtmlColor);
-                 document.querySelector(DOMstring.productDetail.color.parent).addEventListener("click", this.functionChangeColorOnclick);
+        validateColorForRender(iColorPositionInArray) {
+            
+            //// valida si existe el object color            
+            if (this.color.length !== 0 && this.color[0] !== undefined && this.color !== undefined && Array.isArray(this.color) && this.color !== null) {
+                /// declara las variables a utilizar
+                let htmlColor, newHtmlColor, elementParentHtml;
+
+                /// declara el parent element de los elementos, donde se insertaran los elementos childs
+                elementParentHtml =  document.querySelector(DOMstring.productDetail.color.parent);
+
+                ///// si existen elementos childs dentro del padre div, se eliminan
+                if (elementParentHtml.children.length >= 1) {
+                    Array.from(elementParentHtml.children).forEach(element => {
+                        elementParentHtml.removeChild(element);
+                    });
+                }
+
+                /// añade la clase al div padre (antes estaba el div vacio)
+                elementParentHtml.classList.add('product-detail__color');
+
+                /// busca el titulo y los span circles html
+                htmlColor = this.getHtmlDetailColor();
+
+                /// si la variable es undefined se declara 0. Esta variable viene cuando se le da click al los circulos de number del object product
+                if (iColorPositionInArray === undefined) iColorPositionInArray = 0;
+
+                /// reemplaza, añade la data real del object color 
+                 newHtmlColor = htmlColor.replace('%thisColor%', Object.keys(this.color[iColorPositionInArray])[0]);
+                 newHtmlColor = newHtmlColor.replace('%infoColor-1%', Object.keys(this.color[iColorPositionInArray])[0]);
+                 newHtmlColor = newHtmlColor.replace('%infoColor-2%', Object.keys(this.color[iColorPositionInArray])[1]);
+                 newHtmlColor = newHtmlColor.replace('%infoColor-3%', Object.keys(this.color[iColorPositionInArray])[2]);
+
+                /// inserta el html con la data en el padre
+                 elementParentHtml.insertAdjacentHTML('beforeend', newHtmlColor);
+                 /// añade un eventelistener al padre para el onclick de los circle
+                 elementParentHtml.addEventListener("click", this.functionChangeColorOnclick);
             }
 
-                 console.log('price--', this.price);
-            
         }
         validateInfoForRender() {
              let objectInfoEntries, valueObj, htmlBtn,htmlInfoDescription, htmlInfoChilds;
@@ -457,16 +532,13 @@
                         valueObj = this.validateForRender(this.info.brand);
                         if (valueObj) { htmlInfoChilds += this.getHtmlDetailInfoBrand(); }
                         break;
-
-                
                     default:
                         break;
                 }
              });
 
             document.querySelector(DOMstring.productDetail.info.itemsInfoParent).insertAdjacentHTML('beforeend', htmlInfoChilds);
-            // console.log(htmlInfoChilds);
-            
+                        
             htmlBtn = this.getHtmlDetailBuyBtn();
 
             document.querySelector(DOMstring.productDetail.info.itemsInfoParent).insertAdjacentHTML('beforeend', htmlBtn);
@@ -474,14 +546,6 @@
 
            
             /*
-             console.log(this.description);
-            console.log(this.size);
-            console.log(this.lifetime);
-            console.log(this.typeLight);
-            console.log(this.voltage);
-            console.log(this.conection);
-            console.log(this.brand);
-
             this.description
             this.size
             this.lifetime
@@ -491,77 +555,39 @@
             this.brand
 
            
-
-            ifNotExistsThrowError(field, element) {
-                if (element.hasOwnProperty(field) && element[field] !== null) {
-                    return true;
-                }
-                throw Error('Product property not found: ' + field);
-            }
              */
-            
-
-            // if (valueObj !== undefined) {
-            //     return true;
-            // } else {
-            //     return false;
-            // }
-
         }
 
         renderAsDetail() {
             let objectEntries, valueObj, htmlChilds, htmlImg, htmlInfoDescription, newHtmlChilds;
 
-            /*
-            htmlImg = this.getHtmlDetailImage();
-
-            htmlChilds = this.getHtmlDetailName();
-            htmlChilds += this.getHtmlDetailSubname();
-            htmlChilds += this.getHtmlDetailNumber();
-            htmlChilds += this.getHtmlDetailPrice();
-            htmlChilds += this.getHtmlDetailInfoSize();
-            htmlChilds += this.getHtmlDetailInfoConection();
-            htmlChilds += this.getHtmlDetailInfoVoltage();
-            htmlChilds += this.getHtmlDetailInfoLifetime();
-            
-            htmlInfoDescription = this.getHtmlDetailInfoDescription();
-            */
-
             this.validateColorForRender();
             this.validateWattForRender();
             this.validateInfoForRender();
 
-            objectEntries = Object.entries(this);
+            this.validateNumberCableForRender();
 
-            
+            objectEntries = Object.entries(this);
             objectEntries.forEach(element => {
-                
 
                 switch (element[1]) {                   
                     case this.name:
                         valueObj = this.validateForRender(this.name);
                         if (valueObj) { htmlChilds = this.getHtmlDetailName();} 
                         break;
-
                     case this.subname:
                         valueObj = this.validateForRender(this.subname);
                         if (valueObj) { htmlChilds += this.getHtmlDetailSubname();} 
                         break;
 
-                    case this.number:
-                        
-                        valueObj = this.validateForRender(this.number);
-                        
-                         if (valueObj) {   htmlChilds += this.getHtmlDetailNumber();}                 
-                        
-
+                    case this.number:                        
+                        // valueObj = this.validateForRender(this.number);                        
+                        //  if (valueObj) {   htmlChilds += this.getHtmlDetailNumber();}          
                         break;
-
                     case this.price:
                         valueObj = this.validateForRender(this.price);
                         if (valueObj) { htmlChilds += this.getHtmlDetailPrice();}
                         break;
-
                     case this.images:
                         valueObj = this.validateForRender(this.images);
                         if (valueObj) { htmlImg = this.getHtmlDetailImage(); }                        
@@ -569,24 +595,12 @@
 
                     default:
                 }
-                
             });
 
             /*
             ///// por hacer
-            // ---- terminada// verificar los cables que da undefined en detalle de productos. Es el this.info en el swich
-            // crear colores un producto
-            // crear los precios para un solo producto. UNO SOLO
-            // Arreglar los precios estan saliendo cortados por una posicion en el array de this.price[0]. 
             // crear productos relacionados dependiendo de la categoria del producto. Se puede ser algo aleatorio
-            // verificar el JSON, seguro faltaran propiedades por mostrar en cada producto
-            // ---- terminada// crear imagenes por defecto para cada categoria o tipo de producto
-            // terminar el contactar
-            // ver que falta en toda la web en las tareas del evernote
-            // poner el ++A solo para los bombillos
-            // modificar las rutas de las imagenes
             */
-
 
             document.querySelector(DOMstring.productDetail.navtopLinkCurrent).insertAdjacentHTML('beforeend', this.getHtmlDetailNavtopLinkCurrent());
             document.querySelector(DOMstring.productDetail.parentDetail).insertAdjacentHTML('beforeend', htmlChilds);
@@ -616,6 +630,13 @@
                     <span id="${DOMstring.productDetail.color.color1}" class="product-detail__color-item product-detail__color-item--1 product-detail__color-item--active"></span>
                     <span id="${DOMstring.productDetail.color.color2}" class="product-detail__color-item product-detail__color-item--2"></span>
                     <span id="${DOMstring.productDetail.color.color3}" class="product-detail__color-item product-detail__color-item--3"></span>`;
+        }
+        getHtmlDetailCableNumber() {
+            return ` <p class="product-detail__watt-name">Número:</p>
+                      `;
+        }
+        getHtmlDetailNewCableNumber(index) {
+            return `<span id="%itemID-${index}%" data-index="${index}" class="product-detail__watt-item">%itemObj-${index}%</span>`;
         }
         getHtmlDetailTitleWatt() {
             return ` <p class="product-detail__watt-name">Potencia (Watt):</p>
@@ -676,9 +697,8 @@
         request.send();
         let products_catalog = [];
         request.onload = function () {
-            // console.log('Tardo Mas!!!! :(');
             products_catalog = request.response;
-            console.log(products_catalog);
+            // console.log(products_catalog);
             loadProducts(products_catalog);
 
         }
@@ -698,15 +718,9 @@
             
             // elementProduct = elementCategoryProduct.filter(obj => console.log(obj));
             if (elementCategoryProduct[0] !== undefined) {
-                
-                console.log('product', elementCategoryProduct[0]);
-
                 const product = new Product(elementCategoryProduct[0]);
                 product.renderAsDetail();
             }
-            // console.log('este no', elementCategoryProduct[0]);
-
-            
             
         });
 

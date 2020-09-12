@@ -365,18 +365,21 @@ let controller = (function () {
 
         // formData.append("userMessage", localStorage.getItem('userMessage'));
 
-        const dataSendUserForm = { userMessage: localStorage.getItem('userMessage'),
+        const dataSendUserForm = {
+                     userMessage: localStorage.getItem('userMessage'),
                      userNumber: localStorage.getItem('userNumber'),
                      userEmail: localStorage.getItem('userEmail'),
-                     userName: localStorage.getItem('userName') };
+                     userName: localStorage.getItem('userName') 
+        };
 
         const req = new XMLHttpRequest();
-        req.open('POST', 'http://localhost:3000/users', true);
+        req.open('POST', 'https://cqo93zhm9k.execute-api.us-east-1.amazonaws.com/dev/contactUS', true);
         req.onreadystatechange = function (aEvt) {
             console.log(req.readyState);
             if (req.readyState == 4) {
                 if (req.status == 200){
                     console.log(req.responseText);
+                    console.log('http://127.0.0.1:5500/contact.html 200 ------------------');  
                 }
                 else {
                     console.log("Error loading page\n");

@@ -1960,9 +1960,9 @@ img {
 }
 
 .product-detail__items__info {
-  -ms-grid-row: 5;
+  -ms-grid-row: 6;
   -ms-grid-row-span: 1;
-  grid-row: 5 / 6;
+  grid-row: 6 / 7;
 }
 
 .product-detail__items__info > p {
@@ -2015,13 +2015,28 @@ img {
   color: #14103D;
 }
 
+.product-detail__instock {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-size: 2.5rem;
+  margin-top: 1.51rem;
+  color: #2ecc71;
+}
+
 .product-detail__color {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-row-span: 1;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (max-content)[4];
@@ -2054,15 +2069,25 @@ img {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 5rem;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
   border-radius: 50%;
   cursor: pointer;
   -webkit-transition: all .2s;
   transition: all .2s;
   margin-right: 1rem;
-  background-color: #1a1d1b;
-  border: 4px solid #f9f9f9;
+  background-color: white;
+  border: 4px solid #eee;
 }
 
 .product-detail__color-item:hover {
@@ -2079,6 +2104,11 @@ img {
   border: 4px solid #D2A056;
 }
 
+.product-detail__color-item {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
 .product-detail__color-item--1 {
   background-color: #1a1d1b;
 }
@@ -2091,13 +2121,90 @@ img {
   background-color: #dddddd;
 }
 
+.product-detail__cableNum {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5 / 6;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (max-content)[4];
+      grid-template-columns: repeat(4, -webkit-max-content);
+      grid-template-columns: repeat(4, max-content);
+  -ms-grid-rows: (min-content)[2];
+      grid-template-rows: repeat(2, -webkit-min-content);
+      grid-template-rows: repeat(2, min-content);
+  margin: .7rem 0;
+  grid-row-gap: .5rem;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  grid-row: 4 / 5;
+}
+
+.product-detail__cableNum-name {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 4;
+  grid-column: 1 / 5;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product-detail__cableNum-name span {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.product-detail__cableNum-item {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2 / 3;
+  width: 5rem;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  margin-right: 1rem;
+  background-color: white;
+  border: 4px solid #eee;
+}
+
+.product-detail__cableNum-item:hover {
+  -webkit-transform: translateY(-2px);
+          transform: translateY(-2px);
+}
+
+.product-detail__cableNum-item:active {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+
+.product-detail__cableNum-item--active {
+  border: 4px solid #D2A056;
+}
+
 .product-detail__watt {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
-  -ms-grid-row: 4;
+  -ms-grid-row: 5;
   -ms-grid-row-span: 1;
-  grid-row: 4 / 5;
+  grid-row: 5 / 6;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (max-content)[4];
@@ -2119,6 +2226,11 @@ img {
   grid-row: 1 / 2;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+.product-detail__watt-name span {
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 .product-detail__watt-item {
@@ -2143,7 +2255,7 @@ img {
   transition: all .2s;
   margin-right: 1rem;
   background-color: white;
-  border: 3px solid #eee;
+  border: 4px solid #eee;
 }
 
 .product-detail__watt-item:hover {
@@ -2157,7 +2269,7 @@ img {
 }
 
 .product-detail__watt-item--active {
-  border: 3px solid #D2A056;
+  border: 4px solid #D2A056;
 }
 
 .product-detail__btn {
@@ -2215,6 +2327,12 @@ img {
   overflow: hidden;
   border: 1px solid rgba(180, 180, 180, 0.192);
   border-radius: 3px;
+  -webkit-transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.product__box-img:hover {
+  border: 1px solid #D2A056;
 }
 
 .product__box-img:hover img {
