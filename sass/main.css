@@ -1050,6 +1050,7 @@ img {
   cursor: pointer;
   -webkit-transition: all .5s;
   transition: all .5s;
+  z-index: 999;
 }
 
 .btn:focus {
@@ -1678,6 +1679,34 @@ img {
     -ms-grid-column-span: 4;
     grid-column: 1 /5;
   }
+}
+
+.form__success {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+}
+
+.form__success img {
+  display: block;
+  width: 18rem;
+}
+
+.form__success span {
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .logo {

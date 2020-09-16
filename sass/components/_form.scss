@@ -100,5 +100,22 @@
         @include respond(phone){
             grid-column: 1 /5;
         }
-    } 
+    }
+    &__success {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all .2s;
+
+        img {
+            display: block;
+            width: 18rem;
+        }
+
+        span { 
+            text-align: center;
+            font-size: 2.5rem;
+        }
+    }
 }

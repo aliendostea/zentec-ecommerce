@@ -19,6 +19,7 @@ let controller = (function () {
         previousBtn: '#contact-btn-previous',
         headerNav: '#header-nav',
         pTagHtmlPopupUser: 'popup-user',
+        popupDataUserParentElement: 'popup-data-user',
         formBoxParent: '.form__box',
         btnSendForm: '#sendFormBtn',
     };
@@ -253,6 +254,24 @@ let controller = (function () {
 
     }
 
+    function dataUserSendSuccessfully() {
+        let popupParent, childPopupParent;
+        popupParent = document.querySelector(`#${DOMstrings.popupDataUserParentElement}`);
+
+        const resultsArray = Array.from(popupParent.children);
+        resultsArray.forEach(element => {
+            popupParent.removeChild(element);
+        });
+
+        childPopupParent = `    <button id="popup-btn-x" class="btn btn-round"><span class="btn-round__lines-x"></span></button>
+                                <div class="form__success fade-in">
+                                    <img src="img/icon-success.svg" alt="">
+                                    <span>Tu mensaje se ha <br> enviado exitosamente</span>
+                                </div>
+                            `;
+        popupParent.insertAdjacentHTML('beforeend', childPopupParent);
+    }
+
     /// chequea si hay errores
     checkIfExistErrorsForm = (inputData) => {
         let errorForm;
@@ -358,19 +377,14 @@ let controller = (function () {
 
     //// se le envia al backend los datos del usuario con un XMLHttpRequest
     handleSendUsersForm = () => {
-        console.log('send!', localStorage.getItem('userMessage'));
-
-        console.log('staaaart!!');
-        // const formData = new FormData();
-
-        // formData.append("userMessage", localStorage.getItem('userMessage'));
-
         const dataSendUserForm = {
-                     userMessage: localStorage.getItem('userMessage'),
-                     userNumber: localStorage.getItem('userNumber'),
-                     userEmail: localStorage.getItem('userEmail'),
-                     userName: localStorage.getItem('userName') 
+            userMessage: localStorage.getItem('userMessage'),
+            userNumber: localStorage.getItem('userNumber'),
+            userEmail: localStorage.getItem('userEmail'),
+            userName: localStorage.getItem('userName')
         };
+
+        const {userMessage: messageLS, userNumber: numberLS, userEmail: emailLS, userName: nameLS} = dataSendUserForm;
 
         const req = new XMLHttpRequest();
         req.open('POST', 'https://cqo93zhm9k.execute-api.us-east-1.amazonaws.com/dev/contactUS', true);
@@ -379,17 +393,25 @@ let controller = (function () {
             if (req.readyState == 4) {
                 if (req.status == 200){
                     console.log(req.responseText);
-                    console.log('http://127.0.0.1:5500/contact.html 200 ------------------');  
+                    console.log('200 ------------------');  
+                    dataUserSendSuccessfully();
                 }
                 else {
-                    console.log("Error loading page\n");
+                    console.log("Error loading page");
                 }
             } else{
                 console.log('sending...');
             }
         };
         req.setRequestHeader('Content-Type', 'application/json');
-        req.send(JSON.stringify(dataSendUserForm));
+        req.send(JSON.stringify({
+            senderName: nameLS,
+            senderEmail: emailLS,
+            senderPhone: numberLS,
+            message: messageLS,
+        }));
+
+        
         // req.send(formData); 
 
         // var req = new XMLHttpRequest();
@@ -398,7 +420,7 @@ let controller = (function () {
         // req.onerror = onError;
         // req.open("GET", url, true);
         // req.send(null);
-    };  
+    };
    
     return {
         init: function () {

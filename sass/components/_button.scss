@@ -19,6 +19,7 @@
   outline: none;
   cursor: pointer;
   transition: all .5s; 
+  z-index: 999;
 
   @include respond(phone){ 
     // font-size: 1.1rem;   //borrar   
