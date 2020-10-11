@@ -31,7 +31,7 @@ $ npm install
 - [npm](https://www.npmjs.com/) - Package manager for the JavaScript programming language
 - [node.js](https://nodejs.org/en/) - JavaScript runtime environment that executes JavaScript code outside of a web browser
 
-## When I developed this course 
+## When I developed this project 
 
 I developed this project on January 2020. 
 
